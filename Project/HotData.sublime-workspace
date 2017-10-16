@@ -1,0 +1,1067 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"upd",
+				"updateLimPlot"
+			],
+			[
+				"da",
+				"dataFile"
+			],
+			[
+				"fe",
+				"fieldName"
+			],
+			[
+				"fiel",
+				"fieldName"
+			],
+			[
+				"fia",
+				"fieldNameList"
+			],
+			[
+				"dat",
+				"dataFile"
+			],
+			[
+				"dataF",
+				"dataFollList"
+			],
+			[
+				"data",
+				"DataFileIO"
+			],
+			[
+				"dra",
+				"drawDataMethod"
+			],
+			[
+				"re",
+				"readDataLine"
+			],
+			[
+				"ne",
+				"nameList"
+			],
+			[
+				"spl",
+				"splitedLine"
+			],
+			[
+				"rea",
+				"readData"
+			],
+			[
+				"test",
+				"testDataReader"
+			],
+			[
+				"fie",
+				"fieldName"
+			],
+			[
+				"Da",
+				"DataFileWriter"
+			],
+			[
+				"number",
+				"numberOfDataField"
+			],
+			[
+				"num",
+				"numberOfDataField"
+			],
+			[
+				"nam",
+				"nameList"
+			],
+			[
+				"com",
+				"commandStr"
+			],
+			[
+				"temperature",
+				"temperatureUnit"
+			],
+			[
+				"temp",
+				"temperatureUnit"
+			],
+			[
+				"ans",
+				"answerList"
+			],
+			[
+				"co",
+				"commandStr"
+			],
+			[
+				"list",
+				"list"
+			],
+			[
+				"Tim",
+				"TimerInstrument"
+			],
+			[
+				"an",
+				"answer"
+			],
+			[
+				"du",
+				"dummy"
+			],
+			[
+				"GP",
+				"GPIBTryNumber"
+			],
+			[
+				"out",
+				"outputON"
+			],
+			[
+				"mea",
+				"measureName"
+			],
+			[
+				"magne",
+				"magneticFieldRate"
+			],
+			[
+				"GPIB",
+				"GPIBTryNumber"
+			],
+			[
+				"intr",
+				"instrument"
+			],
+			[
+				"GPI",
+				"GPIBTryNumber"
+			],
+			[
+				"getMe",
+				"getMeasureByName"
+			],
+			[
+				"meas",
+				"measureName"
+			],
+			[
+				"meau",
+				"measureList"
+			],
+			[
+				"me",
+				"measureMethod"
+			],
+			[
+				"measu",
+				"measureNameList"
+			],
+			[
+				"el",
+				"elapseTime"
+			],
+			[
+				"swe",
+				"sweepedArgument"
+			],
+			[
+				"sw",
+				"sweepedArgumentChoice"
+			],
+			[
+				"G",
+				"GetValue"
+			],
+			[
+				"getSt",
+				"getStartValue"
+			],
+			[
+				"comman",
+				"commandName"
+			],
+			[
+				"cu",
+				"currentStepStatus"
+			],
+			[
+				"pp",
+				"ppmsInstrument"
+			],
+			[
+				"st",
+				"startValue"
+			],
+			[
+				"Set",
+				"SetItems"
+			],
+			[
+				"ex",
+				"expectedValue"
+			],
+			[
+				"tol",
+				"toleranceCtrl"
+			],
+			[
+				"_upd",
+				"_updateOkButton"
+			],
+			[
+				"EV",
+				"EVT_TEXT"
+			],
+			[
+				"on",
+				"onConditionTypeChoice"
+			],
+			[
+				"condition",
+				"conditionType"
+			],
+			[
+				"po",
+				"possibleAnswerList"
+			],
+			[
+				"con",
+				"conditionType"
+			],
+			[
+				"Comm",
+				"CommandAction"
+			],
+			[
+				"Wai",
+				"WaitForAction"
+			],
+			[
+				"PPMS",
+				"PPMSStatusAskCommand"
+			],
+			[
+				"answ",
+				"answerDict"
+			],
+			[
+				"getCond",
+				"getConditionType"
+			],
+			[
+				"to",
+				"tolerance"
+			],
+			[
+				"setCo",
+				"setCommand"
+			],
+			[
+				"arg",
+				"argumentCtrl"
+			],
+			[
+				"argument",
+				"argumentCtrl"
+			],
+			[
+				"ar",
+				"argumentCtrl"
+			],
+			[
+				"EVT",
+				"EVT_CHOICE"
+			],
+			[
+				"_update",
+				"_updateArgumentInputCtrl"
+			],
+			[
+				"startV",
+				"startValueCtrl"
+			],
+			[
+				"swee",
+				"sweepArgument"
+			],
+			[
+				"argu",
+				"argumentName"
+			],
+			[
+				"pa",
+				"parentSequence"
+			],
+			[
+				"step",
+				"stepSweepB"
+			],
+			[
+				"new",
+				"newDataSection"
+			],
+			[
+				"is",
+				"isDone"
+			],
+			[
+				"Data",
+				"DataSectionAction"
+			],
+			[
+				"sec",
+				"sectionName"
+			],
+			[
+				"Wait",
+				"WaitAction"
+			],
+			[
+				"ac",
+				"actionKey"
+			],
+			[
+				"setEn",
+				"setEndStep"
+			],
+			[
+				"colo",
+				"colorList"
+			],
+			[
+				"YDat",
+				"YDataList"
+			],
+			[
+				"XData",
+				"XDataList"
+			],
+			[
+				"plot",
+				"plotPage"
+			],
+			[
+				"na",
+				"nameList"
+			],
+			[
+				"get",
+				"getActiveSection"
+			],
+			[
+				"empt",
+				"emptyLine"
+			],
+			[
+				"open",
+				"openingMode"
+			],
+			[
+				"dataFile",
+				"dataFileManager"
+			],
+			[
+				"ope",
+				"openingMode"
+			],
+			[
+				"file",
+				"fileName"
+			],
+			[
+				"op",
+				"openingMode"
+			],
+			[
+				"wr",
+				"writeDataFilePath"
+			],
+			[
+				"selec",
+				"selectDataFile"
+			],
+			[
+				"onSl",
+				"onSelectDataFile"
+			],
+			[
+				"res",
+				"resultsDict"
+			],
+			[
+				"write",
+				"writeSectionHeader"
+			],
+			[
+				"sa",
+				"savingData"
+			],
+			[
+				"Show",
+				"ShowWindowModal"
+			],
+			[
+				"_sequ",
+				"_sequenceEmergencyStop"
+			],
+			[
+				"_seque",
+				"_sequenceBeingPause"
+			],
+			[
+				"_sequence",
+				"_sequenceOnPause"
+			],
+			[
+				"clse",
+				"closeDataTable"
+			],
+			[
+				"comm",
+				"commandList"
+			],
+			[
+				"command",
+				"commandList"
+			],
+			[
+				"getRe",
+				"getRepetitionList"
+			],
+			[
+				"getMea",
+				"getMeasureCommandList"
+			],
+			[
+				"repe",
+				"repetitionList"
+			],
+			[
+				"chann",
+				"channelNameList"
+			],
+			[
+				"rep",
+				"repetition"
+			],
+			[
+				"channel",
+				"channelName"
+			],
+			[
+				"ch",
+				"channelName"
+			],
+			[
+				"chan",
+				"channelName"
+			],
+			[
+				"selectedChan",
+				"selectedChannelRepetitionList"
+			],
+			[
+				"Measure",
+				"MeasureAction"
+			],
+			[
+				"getIns",
+				"getInstrumentName"
+			],
+			[
+				"getM",
+				"getMagneticField"
+			],
+			[
+				"getCom",
+				"getCommandByName"
+			],
+			[
+				"a",
+				"argumentName"
+			],
+			[
+				"_updateCom",
+				"_updateCommandInput"
+			],
+			[
+				"in",
+				"instrument"
+			],
+			[
+				"CommandAction",
+				"CommandActionEditDialog"
+			],
+			[
+				"Act",
+				"ActionEditDialog"
+			],
+			[
+				"_make",
+				"_makeButtonWidget"
+			],
+			[
+				"En",
+				"EndOfSequence"
+			],
+			[
+				"_ma",
+				"_makeBinding"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/oneminimax/Documents/Projets Programmation/HotData/HotDataViewer.py",
+			"settings":
+			{
+				"buffer_size": 9788,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/oneminimax/Documents/Projets Programmation/DataFileIO/Sequence Mesure/Mesure_T_vs_time_IM.py",
+			"settings":
+			{
+				"buffer_size": 865,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"PyProj",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"font",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"fold",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"snip",
+				"Snippet: Sub Sub Section"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"tex",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"equ",
+				"Snippet: Equation"
+			],
+			[
+				"begin",
+				"Snippet: \\begin{}…\\end{}"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"sid",
+				"View: Toggle Side Bar"
+			],
+			[
+				"",
+				"Code Folding: Fold Tag Attributes"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/oneminimax/Documents/Projets Programmation/HotData",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileIO",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileIO/Sequence Mesure"
+	],
+	"file_history":
+	[
+		"/Users/oneminimax/Documents/Projets Programmation/SweepMachine FL3 BU/ActionModule.py",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileIO/DataFileIO.py",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileIO/workfile_002.txt",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileIO/Sequence Mesure/Mesure_T_vs_time_IM.py",
+		"/Users/oneminimax/Documents/Projets Programmation/HotData/DataGenerator.py",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileIO/testKillWindow.py",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileIO/killerWindow.py",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileIO/workfile.txt",
+		"/Users/oneminimax/Documents/Projets Programmation/HotData/HotDataReader.py",
+		"/Users/oneminimax/Documents/Projets Programmation/SweepMachine/testSlave.py",
+		"/Users/oneminimax/Documents/Projets Programmation/Slave/slave/srs/sr830.py",
+		"/Users/oneminimax/Documents/Projets Physique/DRX Monocristaux/LaTeX/AngleFacettes.tex",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/InstrumentLibrary.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/InstrumentModule.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/Project/SweepMachine2.sublime-project",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/SweepMachine.py",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/PseudoGap/PseudoGap.tex",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/Systeme de Resistance/SectionSystemesContinus.tex",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/ActionModule.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/sequencesVvsI.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/DataFileModule.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/ActionDialogs.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/UnitsModule.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/InstrumentLibrary_old.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/InstrumentModule_old.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/Notes",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/Effet Hall Quantique/EHQ.tex",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/Systeme de Resistance/SectionEffetTunnel.tex",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/SweepMachine_prototype.py",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/Theory XRD/XRDTheory.tex",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/SweepMachine.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/ActionModule.py",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/User/Python.sublime-settings",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XRDMappingLaTeX/tex/XRDMapping.tex",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine2/FieldModule.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/PlanerLib.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/DataAnalysis/XRD/DRXMapLib.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/ConditionModule.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/InstrumentLib.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/DataIOLib.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/DataDefault.txt",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/FieldModule.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/InstrumentModule.py",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/Python/Python.sublime-build",
+		"/usr/local/lib/python2.7/site-packages/wxversion.py",
+		"/usr/local/lib/python2.7/site-packages/wx.pth",
+		"/Users/oneminimax/Library/Python/2.7/lib/python/site-packages/homebrew.pth",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/SmartUnits.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/Sequences/IVCurvesTest.txt",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/Sequences/UntitledSequence.txt",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/Sequences/SequenceTest2.txt",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/03062014/SweepMachine.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/14042014/SweepMachine.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/testIntrumentLib.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/03062014/InstrumentLib.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/03062014/InstrumentBasic.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/testFile.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/03062014/testFile.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/InstrumentBasic.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/SweepMachine/FunctionLib.py",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/oneminimax/Dropbox/Documents/SublimeProjects/SweepMachine.sublime-project",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/DataAnalysis/DRX/DRXMapLib.py",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XR diffraction/XRDMapping.tex",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/oneminimax/Dropbox/Documents/SublimeProjects/XRDMappingLaTeX.sublime-project",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/User/LaTeX/Align",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XR diffraction/XRDMapping.sublime-project",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XR diffraction/XRD.tex",
+		"/tmp/subl stdin 3h0EMt.txt",
+		"/tmp/subl stdin 0a3fdr.txt",
+		"/tmp/subl stdin 5Qxr9F.txt",
+		"/tmp/subl stdin bFz2vz.txt",
+		"/tmp/subl stdin SJSSsT.txt"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"ylim",
+			"re",
+			"5",
+			",wx.CENTER",
+			"controlSizer",
+			"Choice",
+			"Label",
+			"EXPAND",
+			"axisGridSizer",
+			".ALL",
+			"controlPanel",
+			"YAutoLim",
+			"XAutoLim",
+			"X",
+			"updatePlot",
+			"actualDataFileIndex",
+			"channelNameList",
+			"_onSelectAxisChannel",
+			"_onClose",
+			"updatePlot",
+			"Channel",
+			"Config",
+			"axisSelectionSizerY",
+			"1",
+			"2",
+			"pause",
+			"dataFollList",
+			"plot",
+			"dataFile",
+			"self.",
+			"dataFile.data",
+			"HDW",
+			"readDataLine",
+			"0,0",
+			".dataLength",
+			"Field",
+			"[firstLineIndex:lastLineIndex]",
+			"DataField",
+			"fieldList",
+			"_typelist",
+			"Unit",
+			"Measure",
+			"tag",
+			"Measure",
+			"unit",
+			"temperature_unit",
+			"GPIBCommand",
+			"GPIBAskCommand",
+			"addGPIBAskCommand",
+			"DummyGPIB",
+			"\\uparrow",
+			"up",
+			"t_{ij}",
+			"pan",
+			"NavigationToolbar",
+			"nagivationToolbar",
+			"onPanView",
+			"__call__",
+			"argumentInput",
+			"OnActionEditDialogClosed",
+			"applyCurrentChannel",
+			"applyCurrentOn",
+			"connectChannel",
+			"K2182A",
+			"re.match",
+			"print",
+			"TSweep",
+			"_updateExpectedValue",
+			"constructTestSequence",
+			"updateMeasureList",
+			"findMeasureList",
+			"updateMeasureList",
+			"onRunSequence",
+			"getMeasureList",
+			"YMeasure",
+			"YMeasureCommand",
+			"XMeasure",
+			"selectCommand",
+			"XMeasure",
+			"XMeasureCommand",
+			"lookForMeasureInActionList",
+			"getMeasureList",
+			"_updateAxisChoice",
+			"getMeasureChannelNameList",
+			"command",
+			"getMeasureTagNameList",
+			"getMeasureCommandNameList",
+			"getMeasureNameList",
+			"command",
+			"getMeasureChannelNameList",
+			"getMeasureCommandTagList",
+			"getCommandColumnNumber",
+			"command",
+			"commandList",
+			"command",
+			"measureCommandList",
+			"setMeasureCommandList",
+			"command",
+			"measureList",
+			"updateMeasureList",
+			"updateMeasureCommandList",
+			"measureList",
+			"lookForMeasureInActionList",
+			"getMeasureCommandList",
+			"measureCommandList",
+			"lookForMeasureCommandInActionList",
+			"removeMeasureCommand",
+			"addMeasureCommand",
+			"addGenericMeasurement",
+			"generateMeasurements",
+			"command",
+			"_updateSelectedMeasureListBox",
+			"_updateSelectedCommandListBox",
+			"Command",
+			"_updateRemoveCommandButton",
+			"_updateMeasureButton",
+			"command",
+			"_updateMeasureCommandButton",
+			"_updateCommandChoice",
+			"command",
+			"onRemoveCommandButton",
+			"onMeasureCommandButton",
+			"onMeasureCommandChoice",
+			"commandChoiceSizer",
+			"selectedCommandListBox",
+			"selectedCommandLabel",
+			"selectedChannelSizer",
+			"removeCommandButton"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/oneminimax/Documents/Projets Programmation/HotData/HotDataViewer.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9788,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3489,
+								3489
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1353.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/oneminimax/Documents/Projets Programmation/DataFileIO/Sequence Mesure/Mesure_T_vs_time_IM.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 865,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								651,
+								651
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 224.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latex_log":
+	{
+		"height": 112.0
+	},
+	"pinned_build_system": "",
+	"project": "HotData.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ins",
+				"InstrumentModule.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 204.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
