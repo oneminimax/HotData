@@ -1,15 +1,27 @@
 import numpy as np
 import time
+import random
+import sys
 
-lapse = 1
+sys.path.append("/Users/oneminimax/Documents/Projets Programmation")
 
-f = open('workfile.txt', 'w')
+from AsciiDataFile.Writers import MDDataFileWriter as Writer
 
+lapse = 0.66
+
+nb = 0
+dataFile = Writer('Data/workfile{0:d}.txt'.format(nb))
+dataFile.write_header(['index','time','voltage','petit voltage'],['#','sec','V','mV'])
+
+lastX = 0
+lastY = 0
+t0 = time.time()
 for i in range(100):
-    string = "{0:d} ligne sont ecrites\n".format(i)
-    print(string.strip())
-    f.write(string)
-    f.flush()
+    newData = [i*100,time.time() - t0,lastX,lastY]
+    lastX += (random.random()-0.5)/10
+    lastY += (random.random()-0.5)/10
+    print(newData)
+    dataFile.add_data_point(newData)
     time.sleep(lapse)
 
-f.close()
+# f.close()

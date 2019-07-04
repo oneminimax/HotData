@@ -1,0 +1,825 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"new",
+				"newCopy"
+			],
+			[
+				"fi",
+				"fieldName"
+			],
+			[
+				"sl",
+				"splitedLine"
+			],
+			[
+				"numberof",
+				"numberOfDataField"
+			],
+			[
+				"ch",
+				"chunkSize"
+			],
+			[
+				"con",
+				"concatenate"
+			],
+			[
+				"num",
+				"numberOfDataPoint"
+			],
+			[
+				"data",
+				"dataArray"
+			],
+			[
+				"getField",
+				"getFieldByName"
+			],
+			[
+				"samp",
+				"sampleNumber"
+			],
+			[
+				"se",
+				"separator"
+			],
+			[
+				"spl",
+				"splitedLine"
+			],
+			[
+				"cha",
+				"channelList"
+			],
+			[
+				"Data",
+				"DataContainer"
+			],
+			[
+				"channel",
+				"channelList"
+			],
+			[
+				"Ac",
+				"AsciiFileReader"
+			],
+			[
+				"getC",
+				"getChannelList"
+			],
+			[
+				"chann",
+				"channelName"
+			],
+			[
+				"chan",
+				"channelName"
+			],
+			[
+				"get",
+				"getDataTable"
+			],
+			[
+				"getDa",
+				"getDataLength"
+			],
+			[
+				"_rea",
+				"_readDataTable"
+			],
+			[
+				"k",
+				"k"
+			],
+			[
+				"getScan",
+				"_getScanByFile"
+			],
+			[
+				"scan",
+				"scanType"
+			],
+			[
+				"QZ",
+				"QZLimits"
+			],
+			[
+				"peak",
+				"peakIndex"
+			],
+			[
+				"pea",
+				"peakIndex"
+			],
+			[
+				"peakIn",
+				"peakIndexSet"
+			],
+			[
+				"p",
+				"peakList"
+			],
+			[
+				"sc",
+				"scanList"
+			],
+			[
+				"two",
+				"twoTheta"
+			],
+			[
+				"pcov",
+				"pcov004"
+			],
+			[
+				"popt",
+				"popt004"
+			],
+			[
+				"pop",
+				"poptLSCO"
+			],
+			[
+				"maxS",
+				"maxSList"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"angle",
+				"angleRange"
+			],
+			[
+				"set",
+				"set_yscale"
+			],
+			[
+				"pe",
+				"peakOrder"
+			],
+			[
+				"prin",
+				"printResult"
+			],
+			[
+				"plot",
+				"plotResult"
+			],
+			[
+				"stre",
+				"stressOff"
+			],
+			[
+				"s2",
+				"s2"
+			],
+			[
+				"str",
+				"stress4"
+			],
+			[
+				"str1",
+				"stress1"
+			],
+			[
+				"tra",
+				"transmissionT"
+			],
+			[
+				"tan",
+				"transmissionT"
+			],
+			[
+				"err",
+				"errDc"
+			],
+			[
+				"errD",
+				"errDh"
+			],
+			[
+				"sta",
+				"startPoint"
+			],
+			[
+				"st",
+				"startPoint"
+			],
+			[
+				"pl",
+				"planeIndex"
+			],
+			[
+				"pla",
+				"planeDistance"
+			],
+			[
+				"Am",
+				"amplitude"
+			],
+			[
+				"for",
+				"format"
+			],
+			[
+				"plan",
+				"planeNumberMax"
+			],
+			[
+				"wi",
+				"weightModel1"
+			],
+			[
+				"de",
+				"deltaThickness"
+			],
+			[
+				"mo",
+				"modelY"
+			],
+			[
+				"thi",
+				"thicknessSTD"
+			],
+			[
+				"th",
+				"thicknessSTD"
+			],
+			[
+				"ave",
+				"averageThickness"
+			],
+			[
+				"valu",
+				"valueDict"
+			],
+			[
+				"ran",
+				"rangeName"
+			],
+			[
+				"sca",
+				"scanType"
+			],
+			[
+				"val",
+				"valueDict"
+			],
+			[
+				"plane",
+				"planeNumberStd"
+			],
+			[
+				"getWa",
+				"getWaveLength"
+			],
+			[
+				"setU",
+				"setUseSmooth"
+			],
+			[
+				"lab",
+				"labelStr"
+			],
+			[
+				"ra",
+				"rangeT2T"
+			],
+			[
+				"window",
+				"windowWidthPt"
+			],
+			[
+				"un",
+				"underSampling"
+			],
+			[
+				"setUnd",
+				"setUnderSamplingMethod"
+			],
+			[
+				"midd",
+				"middleValue1"
+			],
+			[
+				"re",
+				"residu"
+			],
+			[
+				"low",
+				"lowValue2"
+			],
+			[
+				"para",
+				"parameterName2"
+			],
+			[
+				"middle",
+				"middleResidu"
+			],
+			[
+				"high",
+				"highValue"
+			],
+			[
+				"windo",
+				"windowWidth"
+			],
+			[
+				"averag",
+				"averageDT"
+			],
+			[
+				"param",
+				"parameterValueList"
+			],
+			[
+				"pa",
+				"parameterNameList"
+			],
+			[
+				"Std",
+				"planeNumberStd"
+			],
+			[
+				"v",
+				"valueDict"
+			],
+			[
+				"getVa",
+				"getParameterValue"
+			],
+			[
+				"stress",
+				"stressLength"
+			],
+			[
+				"cal",
+				"calcCurve"
+			],
+			[
+				"ste",
+				"stepValue"
+			],
+			[
+				"calc",
+				"calcDisplacement"
+			],
+			[
+				"residu",
+				"residuVec"
+			],
+			[
+				"resi",
+				"residuVec"
+			],
+			[
+				"res",
+				"responseExp"
+			],
+			[
+				"planeN",
+				"planeNumberWeight"
+			],
+			[
+				"al",
+				"alphaMiss"
+			],
+			[
+				"alpha",
+				"alphaOffset"
+			],
+			[
+				"par",
+				"parameterName"
+			],
+			[
+				"getPa",
+				"getParameterStepValue"
+			],
+			[
+				"trn",
+				"transmissionCoefficient"
+			],
+			[
+				"under",
+				"underSampling"
+			],
+			[
+				"inter",
+				"interplaneDistance"
+			],
+			[
+				"delta",
+				"deltaTransmissionCoefficient"
+			],
+			[
+				"delt",
+				"deltaInterplaneDistance"
+			],
+			[
+				"paramAMap",
+				"paramAMapSTOList"
+			],
+			[
+				"signa",
+				"signalMapSTOList"
+			],
+			[
+				"file",
+				"fileList"
+			],
+			[
+				"wa",
+				"waveLength"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Python 2"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pacl",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"oacka",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"fold",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"snip",
+				"Snippet: Sub Sub Section"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"tex",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"equ",
+				"Snippet: Equation"
+			],
+			[
+				"begin",
+				"Snippet: \\begin{}…\\end{}"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"sid",
+				"View: Toggle Side Bar"
+			],
+			[
+				"",
+				"Code Folding: Fold Tag Attributes"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/Writers.py",
+		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/Readers.py",
+		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/Examples/Examples.py",
+		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/HotReader.py",
+		"/Users/oneminimax/Documents/Projets Physique/XRD Monocristals/RuCl3/Python/DRX_RuCl3.py",
+		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/__init__.py",
+		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/DataContainer.py",
+		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/Examples.py",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileIO/DataFileIO.py",
+		"/Users/oneminimax/Documents/Projets Programmation/AsciiFileReader/DataContainer.py",
+		"/Users/oneminimax/Documents/Projets Programmation/AsciiFileReader/Readers.py",
+		"/Users/oneminimax/Documents/Projets Physique/Ultrasons/SrRuO4/LaTeX/SrRuO4.tex",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/Project/SrRuO4.sublime-project",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/peakIndex.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/scanType.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/Tests/test_peak_Index.py",
+		"/Users/oneminimax/Documents/Projets Physique/LCO Dodge/DRX/Python/Thickness_Analysis.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/Exemples/Thickness_Analysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/Gated Cuprate/LaTeX/Theory.tex",
+		"/Users/oneminimax/Documents/Doctorat/These/Figures/Partie0/Source/diagrammePhaseCuprate.tex",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/readers/__init__.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/readers/bruker.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/__init__.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/receipe.py",
+		"/Users/oneminimax/Documents/Projets Physique/LSCO on LSAO/Python/RvsT.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/Project/XRDModule.sublime-project",
+		"/Users/oneminimax/Documents/Doctorat/Defense/Figures/SourceDRX/Fig_DRX_Spectre_Large_Theta.tex",
+		"/Users/oneminimax/Documents/Doctorat/These/Partie1/AnalyseDRX/Section_DescriptionGeneralSpectre.tex",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDMonoFit.py",
+		"/Users/oneminimax/Dropbox/Documents/Doctorat/These/Chapitres/Theorie/DRX/Section_T2T_TFDensiteElectronique.tex",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDReceipe.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDModule.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/junk MAP.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDMonoStrainFit.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDMultiPeakFit.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDSigmaFit.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDFitModule.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDDualFit.py",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/Default/Main.sublime-menu",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDFFTFitModule.py",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XRDTheory/Section/Section_ThetaDeuxTheta.tex",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XRDTheory/Section/Section_Structure.tex",
+		"/Users/oneminimax/Dropbox/Programmation/MATLAB/Oceano/KrillZone/KrillZone.m",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDReceipe_old.py",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XRDTheory/Section/Annexe_FFTTheta.tex",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/DataAnalysis/XRD/FFT/20141104_FFT_thickness_analysis.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/DataAnalysis/XRD/Fitting/20140915_fitting_analysis.py",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/analysisExample.py",
+		"/Users/oneminimax/Dropbox/Data/XRD/Bruker/2014/20141030/Analysis/untitled",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/FFTnumericTest.py",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/User/LaTeXing.sublime-settings",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/Users/oneminimax/Dropbox/Documents/Personnel/CV/CV 19072011.tex",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XR diffraction/XRDMapping.tex",
+		"/Users/oneminimax/Dropbox/Documents/SublimeProjects/CV Maxime Dion.sublime-project",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/Python/Python.sublime-build",
+		"/Users/oneminimax/.profile",
+		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/DataAnalysis/DRX/DRXMapLib.py",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/oneminimax/Dropbox/Documents/SublimeProjects/XRDMappingLaTeX.sublime-project",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/User/LaTeX/Align",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XR diffraction/XRDMapping.sublime-project",
+		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XR diffraction/XRD.tex",
+		"/tmp/subl stdin 3h0EMt.txt",
+		"/tmp/subl stdin 0a3fdr.txt",
+		"/tmp/subl stdin 5Qxr9F.txt",
+		"/tmp/subl stdin bFz2vz.txt",
+		"/tmp/subl stdin SJSSsT.txt"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 177.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latex_log":
+	{
+		"height": 112.0
+	},
+	"output.latextools":
+	{
+		"height": 115.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "HotDataViewerQt.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 234.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
