@@ -10,7 +10,7 @@ from AsciiDataFile.Writers import MDDataFileWriter as Writer
 lapse = 0.66
 
 nb = 0
-dataFile = Writer('Data/workfile{0:d}.txt'.format(nb))
+dataFile = Writer('Data/workfile{0:d}.txt'.format(nb),auto_numbering = False)
 dataFile.write_header(['index','time','voltage','petit voltage'],['#','sec','V','mV'])
 
 lastX = 0

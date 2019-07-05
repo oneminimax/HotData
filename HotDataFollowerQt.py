@@ -14,26 +14,26 @@ class Follower(QThread):
     def __init__(self):
         QThread.__init__(self)
 
-        self.keepRunning = True
-        self.onPause = False
+        self.keep_running = True
+        self.on_pause = False
         self.iterations = 0
 
     def stop(self):
 
-        self.keepRunning = False
+        self.keep_running = False
 
     def pause(self):
 
-        self.onPause = True
+        self.on_pause = True
 
     def unpause(self):
 
-        self.onPause = False
+        self.on_pause = False
 
     def run(self):
 
-        while self.keepRunning:
-            if self.onPause:
+        while self.keep_running:
+            if self.on_pause:
                 time.sleep(self.lapse)
                 continue
             
@@ -49,79 +49,79 @@ class Follower(QThread):
 class DataPathFollower(Follower):
     
     lapse = 1
-    newFileSignal = pyqtSignal()
+    new_file_signal = pyqtSignal()
 
-    def __init__(self,dataPath):
+    def __init__(self,data_path):
         
         Follower.__init__(self)
 
         self.extension = '.txt'
-        self.dataPath = dataPath
-        self.dataFileList = list()
-        self.dataFileFollowerList = list()
+        self.data_path = data_path
+        self.data_files = list()
+        self.data_file_followers = list()
     
     def _iteration(self):
         
-        wantedFiles = self._listWantedFiles()
-        for file in wantedFiles:
-            if not file in self.dataFileList:
-                self.dataFileList.append(file)
-                self.lastNewFile = file
-                self.newFileSignal.emit()
+        wanted_files = self._listWantedFiles()
+        for file in wanted_files:
+            if not file in self.data_files:
+                self.data_files.append(file)
+                self.last_new_file = file
+                self.new_file_signal.emit()
                 time.sleep(0.1)
 
     def _listWantedFiles(self):
 
-        allFile = os.listdir(self.dataPath)
-        wantedFiles = list()
-        for file in allFile:
+        all_files = os.listdir(self.data_path)
+        wanted_files = list()
+        for file in all_files:
             if os.path.splitext(file)[1] == self.extension:
-                wantedFiles.append(file)
+                wanted_files.append(file)
 
-        return wantedFiles
+        return wanted_files
 
     def getLastNewFilePath(self):
 
-        return os.path.join(self.dataPath,self.lastNewFile)
+        return os.path.join(self.data_path,self.last_new_file)
 
 class DataFileFollower(Follower):
 
     lapse = 0.1
-    newDataSignal = pyqtSignal()
+    new_data_signal = pyqtSignal()
 
-    def __init__(self,dataReader):
+    def __init__(self,data_reader):
         
         Follower.__init__(self)
 
-        self.dataReader = dataReader
-        self.nbNewLine = 0
+        self.data_reader = data_reader
+        self.nb_new_line = 0
 
     def _iteration(self):
 
-        newLine = self.dataReader.read_data_line()
+        newLine = self.data_reader.read_data_line()
         if newLine:
-            self.nbNewLine += 1
+            self.nb_new_line += 1
         else:
-            if self.nbNewLine > 0:
-                self.nbNewLine = 0
-                self.newDataSignal.emit()
+            if self.nb_new_line > 0:
+                self.nb_new_line = 0
+                self.new_data_signal.emit()
             time.sleep(self.lapse)
 
-    def getDescription(self):
+    def get_description(self):
 
-        return os.path.basename(self.dataReader.get_file_path())
+        return os.path.basename(self.data_reader.get_file_path())
             
 def testDataPathFollower():
 
-    dataPath = '/Users/oneminimax/Documents/Projets Programmation/HotData/'
+    data_path = '/Users/oneminimax/Documents/Projets Programmation/HotData/'
 
     app = QCoreApplication([])
     thread = QThread()
 
-    pathFollower = DataPathFollower(dataPath)
-    pathFollower.moveToThread(thread)
+    path_follower = DataPathFollower(data_path)
+    path_follower.moveToThread(thread)
     thread.start()
-    pathFollower.follow()
+    path_follower.follow()
     sys.exit(app.exec_())
     time.sleep(4)
 
@@ -131,12 +131,12 @@ def testDataFileFollower():
 
     reader = Reader()
 
-    dataReader = HotReader(reader,filePath)
+    data_reader = HotReader(reader,filePath)
 
     app = QCoreApplication([])
     thread = QThread()
 
-    fileFollower = DataFileFollower(dataReader)
+    fileFollower = DataFileFollower(data_reader)
     fileFollower.moveToThread(thread)
     thread.start()
     fileFollower.run()

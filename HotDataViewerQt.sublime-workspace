@@ -4,440 +4,516 @@
 		"selected_items":
 		[
 			[
-				"new",
-				"newCopy"
-			],
-			[
-				"fi",
-				"fieldName"
-			],
-			[
-				"sl",
-				"splitedLine"
-			],
-			[
-				"numberof",
-				"numberOfDataField"
-			],
-			[
-				"ch",
-				"chunkSize"
-			],
-			[
-				"con",
-				"concatenate"
-			],
-			[
-				"num",
-				"numberOfDataPoint"
-			],
-			[
-				"data",
-				"dataArray"
-			],
-			[
-				"getField",
-				"getFieldByName"
-			],
-			[
-				"samp",
-				"sampleNumber"
-			],
-			[
-				"se",
-				"separator"
-			],
-			[
-				"spl",
-				"splitedLine"
-			],
-			[
-				"cha",
-				"channelList"
-			],
-			[
-				"Data",
-				"DataContainer"
-			],
-			[
-				"channel",
-				"channelList"
-			],
-			[
-				"Ac",
-				"AsciiFileReader"
-			],
-			[
-				"getC",
-				"getChannelList"
-			],
-			[
-				"chann",
-				"channelName"
-			],
-			[
-				"chan",
-				"channelName"
-			],
-			[
-				"get",
-				"getDataTable"
-			],
-			[
-				"getDa",
-				"getDataLength"
-			],
-			[
-				"_rea",
-				"_readDataTable"
-			],
-			[
-				"k",
-				"k"
-			],
-			[
-				"getScan",
-				"_getScanByFile"
-			],
-			[
-				"scan",
-				"scanType"
-			],
-			[
-				"QZ",
-				"QZLimits"
-			],
-			[
-				"peak",
-				"peakIndex"
-			],
-			[
-				"pea",
-				"peakIndex"
-			],
-			[
-				"peakIn",
-				"peakIndexSet"
-			],
-			[
-				"p",
-				"peakList"
-			],
-			[
-				"sc",
-				"scanList"
-			],
-			[
-				"two",
-				"twoTheta"
-			],
-			[
-				"pcov",
-				"pcov004"
-			],
-			[
-				"popt",
-				"popt004"
-			],
-			[
-				"pop",
-				"poptLSCO"
-			],
-			[
-				"maxS",
-				"maxSList"
-			],
-			[
-				"in",
-				"index"
-			],
-			[
-				"angle",
-				"angleRange"
-			],
-			[
-				"set",
-				"set_yscale"
-			],
-			[
-				"pe",
-				"peakOrder"
-			],
-			[
-				"prin",
-				"printResult"
-			],
-			[
-				"plot",
-				"plotResult"
-			],
-			[
-				"stre",
-				"stressOff"
-			],
-			[
-				"s2",
-				"s2"
-			],
-			[
-				"str",
-				"stress4"
-			],
-			[
-				"str1",
-				"stress1"
-			],
-			[
-				"tra",
-				"transmissionT"
-			],
-			[
-				"tan",
-				"transmissionT"
-			],
-			[
-				"err",
-				"errDc"
-			],
-			[
-				"errD",
-				"errDh"
-			],
-			[
-				"sta",
-				"startPoint"
-			],
-			[
-				"st",
-				"startPoint"
-			],
-			[
-				"pl",
-				"planeIndex"
-			],
-			[
-				"pla",
-				"planeDistance"
-			],
-			[
-				"Am",
-				"amplitude"
-			],
-			[
-				"for",
-				"format"
-			],
-			[
-				"plan",
-				"planeNumberMax"
-			],
-			[
-				"wi",
-				"weightModel1"
-			],
-			[
-				"de",
-				"deltaThickness"
-			],
-			[
-				"mo",
-				"modelY"
-			],
-			[
-				"thi",
-				"thicknessSTD"
-			],
-			[
-				"th",
-				"thicknessSTD"
-			],
-			[
-				"ave",
-				"averageThickness"
-			],
-			[
-				"valu",
-				"valueDict"
-			],
-			[
-				"ran",
-				"rangeName"
-			],
-			[
-				"sca",
-				"scanType"
-			],
-			[
-				"val",
-				"valueDict"
-			],
-			[
-				"plane",
-				"planeNumberStd"
-			],
-			[
-				"getWa",
-				"getWaveLength"
-			],
-			[
-				"setU",
-				"setUseSmooth"
-			],
-			[
-				"lab",
-				"labelStr"
-			],
-			[
-				"ra",
-				"rangeT2T"
-			],
-			[
-				"window",
-				"windowWidthPt"
-			],
-			[
-				"un",
-				"underSampling"
-			],
-			[
-				"setUnd",
-				"setUnderSamplingMethod"
-			],
-			[
-				"midd",
-				"middleValue1"
+				"ato",
+				"atomic_number"
 			],
 			[
 				"re",
-				"residu"
+				"reversed"
+			],
+			[
+				"layer",
+				"layers_name"
+			],
+			[
+				"la",
+				"layer"
+			],
+			[
+				"laye",
+				"layers"
+			],
+			[
+				"den",
+				"density_profil"
+			],
+			[
+				"int",
+				"interfaces_x"
+			],
+			[
+				"get",
+				"get_interfaces_x"
+			],
+			[
+				"rough",
+				"roughness"
+			],
+			[
+				"two",
+				"two_theta"
+			],
+			[
+				"ome",
+				"omega_offset"
+			],
+			[
+				"om",
+				"omega_offset"
+			],
+			[
+				"max",
+				"max_levels"
+			],
+			[
+				"Z",
+				"Z_levels"
+			],
+			[
+				"get_ka",
+				"get_kappa_v3"
+			],
+			[
+				"kap",
+				"kappa_v3_calc"
+			],
+			[
+				"ban",
+				"bandlabel"
+			],
+			[
+				"band",
+				"band_system"
+			],
+			[
+				"mu",
+				"mu_normal"
+			],
+			[
+				"fi",
+				"fillingFactor"
+			],
+			[
+				"fit",
+				"fit_memory"
+			],
+			[
+				"new",
+				"new_data_list"
+			],
+			[
+				"n",
+				"n_levels"
+			],
+			[
+				"show_",
+				"show_normal_fermi"
 			],
 			[
 				"low",
-				"lowValue2"
+				"low_kappa"
 			],
 			[
-				"para",
-				"parameterName2"
+				"kappa",
+				"kappa_memory"
 			],
 			[
-				"middle",
-				"middleResidu"
+				"sam",
+				"sample_PPMS_FAB_path"
 			],
 			[
-				"high",
-				"highValue"
+				"remo",
+				"remote_main_path"
 			],
 			[
-				"windo",
-				"windowWidth"
+				"loc",
+				"local_main_path"
 			],
 			[
-				"averag",
-				"averageDT"
+				"sa",
+				"sample_path"
 			],
 			[
-				"param",
-				"parameterValueList"
+				"fie",
+				"file_name"
 			],
 			[
-				"pa",
-				"parameterNameList"
+				"dat",
+				"data_set_name"
 			],
 			[
-				"Std",
-				"planeNumberStd"
+				"samp",
+				"sample_names"
 			],
 			[
-				"v",
-				"valueDict"
+				"ex",
+				"exponents"
 			],
 			[
-				"getVa",
-				"getParameterValue"
+				"data",
+				"data_curve_yx"
 			],
 			[
-				"stress",
-				"stressLength"
+				"expo",
+				"exponent_rho_xx"
 			],
 			[
-				"cal",
-				"calcCurve"
+				"axs",
+				"axs_fits"
 			],
 			[
-				"ste",
-				"stepValue"
+				"col",
+				"colors"
 			],
 			[
-				"calc",
-				"calcDisplacement"
+				"ind",
+				"ind_temperature"
 			],
 			[
-				"residu",
-				"residuVec"
+				"ax",
+				"axs_fits"
 			],
 			[
-				"resi",
-				"residuVec"
+				"temp",
+				"temperatures"
 			],
 			[
-				"res",
-				"responseExp"
+				"show",
+				"show_fits"
 			],
 			[
-				"planeN",
-				"planeNumberWeight"
+				"uni",
+				"unique_T"
 			],
 			[
-				"al",
-				"alphaMiss"
+				"un",
+				"unique_T"
 			],
 			[
-				"alpha",
-				"alphaOffset"
+				"norm",
+				"normUnits"
 			],
 			[
-				"par",
-				"parameterName"
+				"fig_",
+				"fig_fits"
 			],
 			[
-				"getPa",
-				"getParameterStepValue"
+				"sho",
+				"show_fits"
 			],
 			[
-				"trn",
-				"transmissionCoefficient"
+				"ar",
+				"area_PCCO"
 			],
 			[
-				"under",
-				"underSampling"
+				"are",
+				"area_PO"
 			],
 			[
-				"inter",
-				"interplaneDistance"
+				"con",
+				"connect_script_path"
 			],
 			[
-				"delta",
-				"deltaTransmissionCoefficient"
+				"da",
+				"data_path_source"
 			],
 			[
-				"delt",
-				"deltaInterplaneDistance"
+				"magn",
+				"magnitude"
 			],
 			[
-				"paramAMap",
-				"paramAMapSTOList"
+				"rho",
+				"rho_xx"
 			],
 			[
-				"signa",
-				"signalMapSTOList"
+				"lin",
+				"linear_fit"
+			],
+			[
+				"del",
+				"delta_B"
+			],
+			[
+				"de",
+				"delta_R"
+			],
+			[
+				"B",
+				"B_fct"
+			],
+			[
+				"data_l",
+				"data_list1"
+			],
+			[
+				"Hal",
+				"Hall_channel"
 			],
 			[
 				"file",
-				"fileList"
+				"file_name"
 			],
 			[
-				"wa",
-				"waveLength"
+				"val",
+				"value_array"
+			],
+			[
+				"label",
+				"label_format"
+			],
+			[
+				"labe",
+				"label_str"
+			],
+			[
+				"sampl",
+				"sample_name"
+			],
+			[
+				"geo",
+				"geometry_dict"
+			],
+			[
+				"sample",
+				"sample_name"
+			],
+			[
+				"resi",
+				"resistivity"
+			],
+			[
+				"nor",
+				"normValue"
+			],
+			[
+				"no",
+				"normT"
+			],
+			[
+				"getDa",
+				"getDataCurveNameList"
+			],
+			[
+				"dataCurv",
+				"dataCurveList"
+			],
+			[
+				"Data",
+				"dataCurveList"
+			],
+			[
+				"RE",
+				"PPMSResistivityDataReader"
+			],
+			[
+				"Da",
+				"DataTuple0T"
+			],
+			[
+				"DA",
+				"DataTuble0"
+			],
+			[
+				"se",
+				"selectMagnetifFieldValue"
+			],
+			[
+				"D",
+				"DataTuble"
+			],
+			[
+				"Sa",
+				"SampleLog"
+			],
+			[
+				"S",
+				"SampleLog"
+			],
+			[
+				"las",
+				"laser_power_inner"
+			],
+			[
+				"laser_power",
+				"laser_power_chamber"
+			],
+			[
+				"annea",
+				"anneal_gas"
+			],
+			[
+				"thi",
+				"thicknessArray"
+			],
+			[
+				"nam",
+				"nameArray"
+			],
+			[
+				"co",
+				"columnList"
+			],
+			[
+				"valu",
+				"valueList"
+			],
+			[
+				"legen",
+				"legendItemList"
+			],
+			[
+				"RAWF",
+				"RAWFileTuple"
+			],
+			[
+				"RAW",
+				"RAWFileTupleList"
+			],
+			[
+				"c",
+				"columnName"
+			],
+			[
+				"fo",
+				"forceAnalysis"
+			],
+			[
+				"ne",
+				"nameThickness"
+			],
+			[
+				"s",
+				"sampleDataBase"
+			],
+			[
+				"PO",
+				"PO_002_area"
+			],
+			[
+				"PCCO",
+				"PCCO_004_area"
+			],
+			[
+				"cP",
+				"cParamPO"
+			],
+			[
+				"an",
+				"analysePeak"
+			],
+			[
+				"K",
+				"KWindow"
+			],
+			[
+				"ampA",
+				"ampA_error"
+			],
+			[
+				"DCP",
+				"DCPO"
+			],
+			[
+				"cl",
+				"clearDB"
+			],
+			[
+				"cPa",
+				"cParamArray"
+			],
+			[
+				"st",
+				"stdEpsArray"
+			],
+			[
+				"in",
+				"incrseaseAngle"
+			],
+			[
+				"fillin",
+				"fillingFactor"
+			],
+			[
+				"get_",
+				"get_energy"
+			],
+			[
+				"some",
+				"something"
+			],
+			[
+				"AF",
+				"AFBand"
+			],
+			[
+				"Band",
+				"BandSystem"
+			],
+			[
+				"test",
+				"testGetMu"
+			],
+			[
+				"FA",
+				"FABDataPath"
+			],
+			[
+				"PPMS",
+				"PPMSResistivityDataReader"
+			],
+			[
+				"sampleN",
+				"sampleNameList"
+			],
+			[
+				"com",
+				"compareChannels"
+			],
+			[
+				"tau",
+				"tauArray"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"ele",
+				"electron_volt"
+			],
+			[
+				"T",
+				"TBm"
+			],
+			[
+				"FAB",
+				"FABSampleList"
+			],
+			[
+				"dis",
+				"dispersion"
+			],
+			[
+				"ener",
+				"energy_memory"
+			],
+			[
+				"Normal",
+				"normalDispersion"
+			],
+			[
+				"p",
+				"packParamter"
+			],
+			[
+				"contri",
+				"contribution2"
+			],
+			[
+				"getMu",
+				"getMuAF"
+			],
+			[
+				"fil",
+				"fillingFactor"
+			],
+			[
+				"bra",
+				"branchSplit"
+			],
+			[
+				"br",
+				"branchSplit"
 			]
 		]
 	},
@@ -498,6 +574,22 @@
 		[
 			[
 				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
 					"Packages/Python/Python.sublime-build",
 					""
 				],
@@ -540,19 +632,63 @@
 		"selected_items":
 		[
 			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Fraction"
+			],
+			[
+				"Snippet: f",
+				"Snippet: Fraction"
+			],
+			[
+				"",
+				"Build: Basic Builder - PdfLaTeX"
+			],
+			[
+				"Pa",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"Pacl",
+				"Package Control: List Packages"
+			],
+			[
+				"snip",
+				"Snippet: table"
+			],
+			[
+				"sni",
+				"Snippet: Table"
+			],
+			[
+				"sn",
+				"Snippet: figure"
+			],
+			[
+				"Snippet: sub",
+				"Snippet: Sub Sub Section"
+			],
+			[
 				"pacl",
 				"Package Control: Remove Package"
 			],
 			[
-				"pa",
-				"Package Control: Remove Package"
-			],
-			[
 				"oacka",
-				"Package Control: Remove Package"
-			],
-			[
-				"pack",
 				"Package Control: Remove Package"
 			],
 			[
@@ -562,10 +698,6 @@
 			[
 				"fold",
 				"Code Folding: Fold Tag Attributes"
-			],
-			[
-				"snip",
-				"Snippet: Sub Sub Section"
 			],
 			[
 				"pac",
@@ -594,10 +726,6 @@
 			[
 				"sid",
 				"View: Toggle Side Bar"
-			],
-			[
-				"",
-				"Code Folding: Fold Tag Attributes"
 			]
 		],
 		"width": 449.0
@@ -607,6 +735,7 @@
 		"height": 139.0,
 		"history":
 		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
 	"distraction_free":
@@ -620,75 +749,134 @@
 	},
 	"file_history":
 	[
-		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/Writers.py",
-		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/Readers.py",
-		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/Examples/Examples.py",
-		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/HotReader.py",
-		"/Users/oneminimax/Documents/Projets Physique/XRD Monocristals/RuCl3/Python/DRX_RuCl3.py",
-		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/__init__.py",
-		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/DataContainer.py",
-		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/Examples.py",
-		"/Users/oneminimax/Documents/Projets Programmation/DataFileIO/DataFileIO.py",
-		"/Users/oneminimax/Documents/Projets Programmation/AsciiFileReader/DataContainer.py",
-		"/Users/oneminimax/Documents/Projets Programmation/AsciiFileReader/Readers.py",
-		"/Users/oneminimax/Documents/Projets Physique/Ultrasons/SrRuO4/LaTeX/SrRuO4.tex",
-		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/Project/SrRuO4.sublime-project",
-		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/peakIndex.py",
-		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/scanType.py",
-		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/Tests/test_peak_Index.py",
-		"/Users/oneminimax/Documents/Projets Physique/LCO Dodge/DRX/Python/Thickness_Analysis.py",
-		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/Exemples/Thickness_Analysis.py",
-		"/Users/oneminimax/Documents/Projets Physique/Gated Cuprate/LaTeX/Theory.tex",
-		"/Users/oneminimax/Documents/Doctorat/These/Figures/Partie0/Source/diagrammePhaseCuprate.tex",
-		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/readers/__init__.py",
-		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/readers/bruker.py",
-		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/__init__.py",
-		"/Users/oneminimax/Documents/Projets Programmation/XRDModule/receipe.py",
-		"/Users/oneminimax/Documents/Projets Physique/LSCO on LSAO/Python/RvsT.py",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/Project/XRDModule.sublime-project",
-		"/Users/oneminimax/Documents/Doctorat/Defense/Figures/SourceDRX/Fig_DRX_Spectre_Large_Theta.tex",
-		"/Users/oneminimax/Documents/Doctorat/These/Partie1/AnalyseDRX/Section_DescriptionGeneralSpectre.tex",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDMonoFit.py",
-		"/Users/oneminimax/Dropbox/Documents/Doctorat/These/Chapitres/Theorie/DRX/Section_T2T_TFDensiteElectronique.tex",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDReceipe.py",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDModule.py",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/junk MAP.py",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDMonoStrainFit.py",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDMultiPeakFit.py",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDSigmaFit.py",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDFitModule.py",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDDualFit.py",
-		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/Default/Main.sublime-menu",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDFFTFitModule.py",
-		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XRDTheory/Section/Section_ThetaDeuxTheta.tex",
-		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XRDTheory/Section/Section_Structure.tex",
-		"/Users/oneminimax/Dropbox/Programmation/MATLAB/Oceano/KrillZone/KrillZone.m",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/XRDReceipe_old.py",
-		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XRDTheory/Section/Annexe_FFTTheta.tex",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/DataAnalysis/XRD/FFT/20141104_FFT_thickness_analysis.py",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/DataAnalysis/XRD/Fitting/20140915_fitting_analysis.py",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/analysisExample.py",
-		"/Users/oneminimax/Dropbox/Data/XRD/Bruker/2014/20141030/Analysis/untitled",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/XRDModule/FFTnumericTest.py",
-		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/User/LaTeXing.sublime-settings",
-		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/LaTeXing/LaTeXing.sublime-settings",
-		"/Users/oneminimax/Dropbox/Documents/Personnel/CV/CV 19072011.tex",
-		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XR diffraction/XRDMapping.tex",
-		"/Users/oneminimax/Dropbox/Documents/SublimeProjects/CV Maxime Dion.sublime-project",
-		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/Python/Python.sublime-build",
-		"/Users/oneminimax/.profile",
-		"/Users/oneminimax/Dropbox/Programmation/Python/Physics/DataAnalysis/DRX/DRXMapLib.py",
-		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/oneminimax/Dropbox/Documents/SublimeProjects/XRDMappingLaTeX.sublime-project",
-		"/Users/oneminimax/Library/Application Support/Sublime Text 2/Packages/User/LaTeX/Align",
-		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XR diffraction/XRDMapping.sublime-project",
-		"/Users/oneminimax/Dropbox/Documents/Physique/Sujets Individuels/XR diffraction/XRD.tex",
-		"/tmp/subl stdin 3h0EMt.txt",
-		"/tmp/subl stdin 0a3fdr.txt",
-		"/tmp/subl stdin 5Qxr9F.txt",
-		"/tmp/subl stdin bFz2vz.txt",
-		"/tmp/subl stdin SJSSsT.txt"
+		"/Users/maximedion/Documents/Projets Programmation/XRDTools/__init__.py",
+		"/Users/maximedion/Documents/Projets Programmation/XRDTools/Geometry.py",
+		"/Users/maximedion/Documents/Projets Programmation/XRDTools/Examples/Mapping.py",
+		"/Users/maximedion/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/Two_Bands.tex",
+		"/Users/maximedion/Documents/Projets Programmation/XRDTools/Examples/Thickness.py",
+		"/Users/maximedion/Documents/Projets Programmation/XRDTools/Spectrum.py",
+		"/Users/maximedion/Documents/Projets Programmation/XRDTools/Reflectometry.py",
+		"/Users/maximedion/Documents/Projets Programmation/XRDTools/Diffractometer.py",
+		"/Users/maximedion/Documents/Projets Programmation/XRDTools/ReflectometryP.py",
+		"/Users/maximedion/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/Initial_Problem.tex",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/Simulations/ElectronicBands2D.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/Local_Cyclotron_Motion.tex",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/Local_Cyclotron_Motion_v0.tex",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/Cuprate_Dispersion.tex",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Hall_Theory.tex",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/Simulations/test_ElectronicBands2D.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/XRD_analysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/many_graph.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/growth_condition.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/Two_Bands.tex",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/Scattering_Time.tex",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/Mobility_Moments.tex",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/isotherms_data_treatement.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/fab_geometry_misc.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/fab_RvsT_HallvsT_data_treatement.py",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileFetch/DataFileFetch.py",
+		"/usr/local/lib/python3.7/site-packages/matplotlib/lines.py",
+		"/usr/local/lib/python3.7/site-packages/numpy/core/fromnumeric.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/Simulations/test_ElectronicBands2D_old.py",
+		"/usr/local/lib/python3.7/site-packages/scipy/interpolate/interpolate.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/Simulations/RK.py",
+		"/Users/oneminimax/Documents/Projets Programmation/DataFileFetch/file_fetch.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/file_fetch.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/Elipse_FS.tex",
+		"/Users/oneminimax/Library/Application Support/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/Local_Cyclotron.tex",
+		"/Users/oneminimax/Documents/Projets Programmation/SampleLog/__init__.py",
+		"/usr/local/lib/python3.7/site-packages/matplotlib/widgets.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/raw_RvsT_data_treatement.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/test_connect_server.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Shell/get_xrd_data.sh",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Shell/connect_server.sh",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/Old/Istotherms_Analysis.py",
+		"/Users/oneminimax/.bashrc",
+		"/Users/oneminimax/.bash_profile",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/LaTeX/Sections/ConductivityTensor.tex",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/general_methods.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/Old/TransportDataBase.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/fab_RvsT_RHvsT_data_treatement.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/test_SampleInfo.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/ManyGraph.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/General_Methods.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/thickness_analysis.py",
+		"/Users/oneminimax/Documents/Projets Programmation/SampleInfo/__init__.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/raw_RvsT_analysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/sampleDataBase.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/testDB.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/interactiveDB.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/TransportDataBase.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/thickness_Analysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/2019/PCCO Hall/Python/textDB.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/General_Methods.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/TransportDataBase.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/ManyGraph.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Hall_Theory.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/NumericSolution.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/thickness_Analysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/Initial_Problem.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/firstTest.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/DataPreTreat.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Simulations/CuprateDispersion_vsT.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/Lifetime_Change.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/Mass_Change.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/Local_Cyclotron.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/Linear_Response.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Simulations/test_ElectronicBands3D.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Simulations/ElectronicBands3D.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/LaTeX/Sections/Reflectometry.tex",
+		"/usr/local/lib/python3.6/site-packages/scipy/integrate/_ivp/base.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Simulations/ElectronicBands_withUnits.py",
+		"/usr/local/lib/python3.6/site-packages/scipy/integrate/_ivp/ivp.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Simulations/RK.py",
+		"/usr/local/lib/python3.6/site-packages/pint/quantity.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Simulations/test_ElectronicBands.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/GeneralD.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Old/CuprateDispersion_vsT.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Isotherms_Methods.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/Two_Bands.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Old/calculationtest4.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Old/fabHallvsTAnalysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Old/FABvsRAW_RvsT_Analysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Old/Istotherms_Analysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/FABvsRAW_RvsT_Analysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/fabHallvsTAnalysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/Istotherms_Analysis.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/Isotropic_Solution.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/Correction_Equation_Motion.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/ConductivityTensor.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/CuprateDispersionMemory.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/CuprateDispersion_vsT.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/testUnit.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/calculationtest4.py",
+		"/usr/local/lib/python3.6/site-packages/scipy/optimize/nonlin.py",
+		"/usr/local/lib/python3.6/site-packages/scipy/interpolate/interpolate.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/Scattering_Time.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Sections/Mobility_Moments.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Hall_Theory_English.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/LaTeX/Linear_Response.tex",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/TreeMesh.py",
+		"/Users/oneminimax/Documents/Projets Physique/Gravure Faisceau Ions Refroidi/Python/Mesure_T_vs_time_IM.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/extractHall_vs_T_PPMS.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Python/calculationtest3.py",
+		"/Users/oneminimax/Documents/Projets Physique/XRD Monocristals/Nd-LSCO/Python/DRX_LSCO.py",
+		"/usr/local/lib/python3.6/site-packages/numpy/lib/twodim_base.py",
+		"/usr/local/lib/python3.6/site-packages/scipy/optimize/minpack.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO Hall/Project/PCCO Hall.sublime-project",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/Spectrum.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/Diffractometer.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/Geometry.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/Tests/test_CristalStructure.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/FormFactor.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/Examples/Thickness.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/CristalStructure.py",
+		"/Users/oneminimax/Documents/Projets Physique/PCCO 17 Hall and Lin Res/LaTeX/Hall_Theory.tex",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/Math.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/Tests/test_FormFactor.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/Tests/test_Diffractometer.py",
+		"/Users/oneminimax/Documents/Projets Programmation/XRDTools/Tests/test_Spectrum.py"
 	],
 	"find":
 	{
@@ -696,7 +884,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 111.0,
 		"where_history":
 		[
 		]
@@ -734,7 +922,7 @@
 	},
 	"input":
 	{
-		"height": 40.0
+		"height": 43.0
 	},
 	"layout":
 	{
@@ -761,7 +949,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 177.0
+		"height": 178.0
 	},
 	"output.find_results":
 	{
@@ -773,9 +961,9 @@
 	},
 	"output.latextools":
 	{
-		"height": 115.0
+		"height": 224.0
 	},
-	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"pinned_build_system": "",
 	"project": "HotDataViewerQt.sublime-project",
 	"replace":
 	{
@@ -788,6 +976,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"Figures/picDiffractionSim.tex"
+			]
 		],
 		"width": 0.0
 	},

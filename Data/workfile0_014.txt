@@ -1,2 +1,0 @@
-Thu Jul  4 17:36:03 2019\n[Header]\nColumn  0 : index               \t#\nColumn  1 : time                \tsec\nColumn  2 : voltage             \tV\nColumn  3 : petit voltage       \tmV\n[Header end]
-
