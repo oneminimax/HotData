@@ -9,17 +9,23 @@ import time
 
 import pyqtgraph as pg
 
-# from pint import UnitRegistry
+import configparser
 
-# sys.path.append("/Users/oneminimax/Documents/Projets Programmation")
-
-from AsciiDataFile.Readers import MDDataFileReader as Reader
+from AsciiDataFile.Readers import MDDataFileReader, DataColumnReader
 from AsciiDataFile.HotReader import HotReader
 from HotDataFollowerQt import DataFileFollower, DataPathFollower
 import UnitModule as UM
 
+import configparser
+
+
+
 # default_data_path = r'/Users/maximedion/Documents/Projets Physique/2019/PCCO Hall/Data Files/20180705A/isotherms'
-default_data_path = r'/Users/maximedion/Documents/Projets Programmation/HotData/Data'
+# default_data_path = r'/Users/maximedion/Documents/Projets Programmation/HotData/Data')
+# read_mode = 'MDData'
+# read_mode = 'DataColumn'
+
+
 
 class DataHandle(object):
 
@@ -53,26 +59,21 @@ class DataHandle(object):
 
     def _get_column_names(self):
 
-        return self.data_reader.data_container.get_column_names()
+        return self.data_reader.get_column_names()
 
     def _get_column_units(self):
 
-        unitLabelList = self.data_reader.data_container.get_column_units()
-        column_units = list()
-        for unitLabel in unitLabelList:
-            column_units.append(UM.make_unit(unitLabel))
+        return self.data_reader.get_column_units()
 
-        return column_units
-
-    def setDataPlot(self,data_plot):
+    def set_data_plot(self,data_plot):
 
         self.data_plot = data_plot
 
-    def setDataItem(self,data_item):
+    def set_data_item(self,data_item):
 
         self.data_item = data_item
 
-    def setColor(self,color):
+    def set_color(self,color):
 
         self.pen.setColor(color)
         self.data_plot.setPen(self.pen)
@@ -111,10 +112,10 @@ class DataHandle(object):
             self.HDV.axes.removeItem(self.data_plot)
             self.visible = False
 
-    def get_xy(self,XFieldName,YFieldName):
+    def get_xy(self,x_column_name,y_column_name):
 
-        X = self.data_reader.data_container.get_column_by_name(XFieldName)
-        Y = self.data_reader.data_container.get_column_by_name(YFieldName)
+        X = self.data_reader.get_column_by_name(x_column_name)
+        Y = self.data_reader.get_column_by_name(y_column_name)
         
         return X,Y
 
@@ -137,6 +138,9 @@ class HotDataViewer(QMainWindow):
 
         self.app = app
 
+        self.config = configparser.ConfigParser()
+        self.config.read('HotDataConfig.ini')
+
         self.data_handles = list()
         self.number_of_data = 0
 
@@ -148,16 +152,13 @@ class HotDataViewer(QMainWindow):
         self.x_data_lim = [0,1]
         self.y_data_lim = [0,1]
 
-        self.x_scale = 1
-        self.y_scale = 1
-
         self.folder_followers = list()
 
         self._initUI()
 
     def __del__(self):
 
-        print('close')
+        pass
 
     def _initUI(self):
 
@@ -208,29 +209,33 @@ class HotDataViewer(QMainWindow):
 
     def _make_connect(self):
 
-        self.button_open_file.clicked.connect(self.onButtonOpenFile)
-        self.button_follow_file.clicked.connect(self.onButtonFollowFile)
-        self.button_follow_folder.clicked.connect(self.onButtonFollowFolder)
-        self.button_select_data.clicked.connect(self.onButtonSelectData)
-        self.button_select_axis.clicked.connect(self.onButtonSelectAxis)
+        self.button_open_file.clicked.connect(self.on_button_open_file)
+        self.button_follow_file.clicked.connect(self.on_button_follow_file)
+        self.button_follow_folder.clicked.connect(self.on_button_follow_folder)
+        self.button_select_data.clicked.connect(self.on_button_select_data)
+        self.button_select_axis.clicked.connect(self.on_button_select_axis)
 
-    def onButtonOpenFile(self):
+    def closeEvent(self,event):
 
-        file_path = QFileDialog.getOpenFileName(self, 'Open File',default_data_path)[0]
+        self.data_config_window.hide()
+        self.axis_config_window.hide()
 
+    def on_button_open_file(self):
+
+        file_path = QFileDialog.getOpenFileName(self, 'Open File',self.config['Param']['default_data_path'])[0]
         if file_path:
             self.new_data_handle(file_path)
 
-    def onButtonFollowFile(self):
+    def on_button_follow_file(self):
 
-        file_path = QFileDialog.getOpenFileName(self, 'Open File',default_data_path)[0]
+        file_path = QFileDialog.getOpenFileName(self, 'Open File',self.config['Param']['default_data_path'])[0]
 
         if file_path:
             self.new_data_handle(file_path,follow = True)
 
-    def onButtonFollowFolder(self):
+    def on_button_follow_folder(self):
 
-        data_path = QFileDialog.getExistingDirectory(self, 'Select a directory',default_data_path)
+        data_path = QFileDialog.getExistingDirectory(self, 'Select a directory',self.config['Param']['default_data_path'])
 
         if data_path:
             new_folder_follower = DataPathFollower(data_path)
@@ -238,13 +243,13 @@ class HotDataViewer(QMainWindow):
             new_folder_follower.start()
             self.folder_followers.append(new_folder_follower)
 
-    def onButtonSelectData(self):
+    def on_button_select_data(self):
 
         self.data_config_window.show()
         self.data_config_window.raise_()
         self.data_config_window.activateWindow()
 
-    def onButtonSelectAxis(self):
+    def on_button_select_axis(self):
 
         self.axis_config_window.show()
         self.axis_config_window.raise_()
@@ -256,7 +261,11 @@ class HotDataViewer(QMainWindow):
                 
     def new_data_handle(self,file_path,follow = False):
 
-        reader = Reader()
+        if self.config['Param']['read_mode'] == 'DataColumn':
+            reader = DataColumnReader()
+        elif self.config['Param']['read_mode'] == 'MDData':
+            reader = MDDataFileReader()
+
         data_reader = HotReader(reader,file_path)
 
         new_data_handle = DataHandle(self,data_reader)
@@ -270,9 +279,6 @@ class HotDataViewer(QMainWindow):
         if len(self.data_handles) == 0:
             self.axis_column_names = new_data_handle.column_names
             self.axis_column_units = new_data_handle.column_units
-
-            # for unit in self.axis_column_units:
-            #     print(unit)
 
             self.x_axis_column_name = self.axis_column_names[0]
             self.y_axis_column_name = self.axis_column_names[1]
@@ -319,9 +325,9 @@ class HotDataViewer(QMainWindow):
 
         data_handle.pen = pg.mkPen(self.number_of_data,width = 2)
         X,Y = data_handle.get_xy(self.x_axis_column_name,self.y_axis_column_name)
-        data_plot = self.axes.plot(X, Y, pen = data_handle.pen)
-        # self.axes.removeItem(data_plot) #Need to remove it so it can be added when the visible checkbox is automatically checked at creation
-        data_handle.setDataPlot(data_plot)
+        data_plot = self.axes.plot(X.magnitude, Y.magnitude, pen = data_handle.pen)
+        
+        data_handle.set_data_plot(data_plot)
 
     def update_all_plot(self):
 
@@ -332,9 +338,9 @@ class HotDataViewer(QMainWindow):
 
         X,Y = data_handle.get_xy(self.x_axis_column_name,self.y_axis_column_name)
 
-        data_handle.data_plot.setData(X/self.x_scale,Y/self.y_scale)
+        data_handle.data_plot.setData(X.magnitude,Y.magnitude)
 
-    def getXYDataLimit(self):
+    def get_xy_data_limit(self):
 
         x_mins = list()
         x_maxs = list()
@@ -358,7 +364,7 @@ class HotDataViewer(QMainWindow):
         index_x = self.axis_column_names.index(self.x_axis_column_name)
         x_axis_unit = self.axis_column_units[index_x]
         
-        x_label = '{0:s} ({1:s})'.format(self.x_axis_column_name,x_axis_unit.get_scaled_label(self.x_scale))
+        x_label = '{0:s} ({1:~})'.format(self.x_axis_column_name,x_axis_unit)
         self.axes.setLabel('bottom', text = x_label)
         
     def update_y_label(self):
@@ -366,7 +372,7 @@ class HotDataViewer(QMainWindow):
         index_y = self.axis_column_names.index(self.y_axis_column_name)
         y_axis_unit = self.axis_column_units[index_y]
 
-        y_label = '{0:s} ({1:s})'.format(self.y_axis_column_name,y_axis_unit.get_scaled_label(self.y_scale))
+        y_label = '{0:s} ({1:~})'.format(self.y_axis_column_name,y_axis_unit)
         self.axes.setLabel('left', text = y_label)
 
     def update_x_axis_choice(self):
@@ -391,15 +397,6 @@ class HotDataViewer(QMainWindow):
         
         self.x_axis_column_name = self.axis_column_names[index_x]
         x_axis_unit = self.axis_column_units[index_x]
-        
-        self.axis_config_window.x_unit_combo_box.clear()
-        self.axis_config_window.x_unit_combo_box.addItems(x_axis_unit.get_all_scale_labels())
-
-        self.x_scale = 1
-        
-        x_unit_index = self.axis_config_window.x_unit_combo_box.findText(x_axis_unit.get_scaled_label(self.x_scale))
-        if x_unit_index > -1:
-            self.axis_config_window.x_unit_combo_box.setCurrentIndex(x_unit_index)
 
         self.update_x_label()
         self.update_all_plot()
@@ -411,45 +408,8 @@ class HotDataViewer(QMainWindow):
         self.y_axis_column_name = self.axis_column_names[index_y]
         y_axis_unit = self.axis_column_units[index_y]
 
-        self.axis_config_window.y_unit_combo_box.clear()
-        self.axis_config_window.y_unit_combo_box.addItems(y_axis_unit.get_all_scale_labels())
-
-        self.y_scale = 1
-
-        YUnitIndex = self.axis_config_window.y_unit_combo_box.findText(y_axis_unit.get_scaled_label(self.y_scale))
-        if YUnitIndex > -1:
-            self.axis_config_window.y_unit_combo_box.setCurrentIndex(YUnitIndex)
-
         self.update_y_label()
         self.update_all_plot()
-
-    def update_x_scale(self):
-
-        index_x = self.axis_config_window.x_axis_combo_box.currentIndex()
-        
-        x_axis_unit = self.axis_column_units[index_x]
-        index_unit_x = self.axis_config_window.x_unit_combo_box.currentIndex()
-        if index_unit_x > -1:
-            currentXUnitLabel = x_axis_unit.get_all_scale_labels()[index_unit_x]
-            self.x_scale = x_axis_unit.relative_scale(currentXUnitLabel)
-            
-        self.update_x_label()
-        self.update_all_plot()
-            
-    def update_y_scale(self):
-
-        index_y = self.axis_config_window.y_axis_combo_box.currentIndex()
-
-        y_axis_unit = self.axis_column_units[index_y]
-        index_unit_y = self.axis_config_window.y_unit_combo_box.currentIndex()
-        if index_unit_y > -1:
-            current_y_unit_label = y_axis_unit.get_all_scale_labels()[index_unit_y]
-            self.y_scale = y_axis_unit.relative_scale(current_y_unit_label)
-            
-        self.update_y_label()
-        self.update_all_plot()
-
-            
 
 class SelectAxis(QWidget):
     def __init__(self,HDV):
@@ -472,7 +432,7 @@ class SelectAxis(QWidget):
 
     def closeEvent(self,event):
 
-        print('closing select axis')
+        pass
 
     def _make_widgets(self):
 
@@ -482,18 +442,15 @@ class SelectAxis(QWidget):
         self.x_axis_combo_box = QComboBox()
         self.y_axis_combo_box = QComboBox()
 
-        self.x_unit_combo_box = QComboBox()
-        self.y_unit_combo_box = QComboBox()
-
     def _make_layout(self):
 
         grid = QGridLayout()
-        grid.addWidget(self.x_axis_label,1,1)
-        grid.addWidget(self.y_axis_label,2,1)
-        grid.addWidget(self.x_axis_combo_box,1,2)
-        grid.addWidget(self.y_axis_combo_box,2,2)
-        grid.addWidget(self.x_unit_combo_box,1,3)
-        grid.addWidget(self.y_unit_combo_box,2,3)
+
+        grid.addWidget(self.x_axis_label,0,0)
+        grid.addWidget(self.y_axis_label,1,0)
+        grid.addWidget(self.x_axis_combo_box,0,1)
+        grid.addWidget(self.y_axis_combo_box,1,1)
+        grid.setColumnStretch(1,1)
 
         vbox = QVBoxLayout(self)
         vbox.addLayout(grid)
@@ -503,9 +460,6 @@ class SelectAxis(QWidget):
         
         self.x_axis_combo_box.currentIndexChanged.connect(self.HDV.change_x_axis_choice)
         self.y_axis_combo_box.currentIndexChanged.connect(self.HDV.change_y_axis_choice)
-
-        self.x_unit_combo_box.currentIndexChanged.connect(self.HDV.update_x_scale)
-        self.y_unit_combo_box.currentIndexChanged.connect(self.HDV.update_y_scale)
 
 class SelectData(QWidget):
     def __init__(self,HDV):
@@ -530,7 +484,7 @@ class SelectData(QWidget):
 
     def closeEvent(self,event):
 
-        print('closing select data')
+        pass
 
     def _make_widgets(self):
 
@@ -554,7 +508,7 @@ class SelectData(QWidget):
     def add_data_handle(self,data_handle):
 
         self.data_items.append(DataListItem(data_handle,parent=self))
-        data_handle.setDataItem(self.data_items[-1])
+        data_handle.set_data_item(self.data_items[-1])
         self.layout.insertWidget(self.layout.count()-1,self.data_items[-1])
 
     def remove_data_handle(self,data_handle):
@@ -643,10 +597,10 @@ class DataListItem(QWidget):
         if dlg.exec_():
             new_color = dlg.currentColor()
             self.setButtonColor(new_color)
-            self.data_handle.setColor(new_color)
+            self.data_handle.set_color(new_color)
 
 
-            # self.setColor(dlg.currentColor().name())
+            # self.set_color(dlg.currentColor().name())
 
     def onRemoveHandle(self):
 

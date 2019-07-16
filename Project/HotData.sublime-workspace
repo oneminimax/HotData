@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"Data",
+				"DataColumnReader"
+			],
+			[
+				"ra",
+				"read_mode"
+			],
+			[
+				"read",
+				"read_mode"
+			],
+			[
 				"def",
 				"defaultPath"
 			],
@@ -444,10 +456,6 @@
 				"isDone"
 			],
 			[
-				"Data",
-				"DataSectionAction"
-			],
-			[
 				"sec",
 				"sectionName"
 			],
@@ -506,27 +514,34 @@
 			[
 				"wr",
 				"writeDataFilePath"
-			],
-			[
-				"selec",
-				"selectDataFile"
-			],
-			[
-				"onSl",
-				"onSelectDataFile"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "\nfrom PyQt5.QtWidgets import QWidget,QApplication, QMainWindow,QLabel,QLineEdit, QPushButton, QCheckBox, QComboBox, QLayout, QHBoxLayout, QVBoxLayout, QGridLayout, QFileDialog, QColorDialog\nfrom PyQt5.QtCore import QThreadPool, Qt\nimport sys\n\nimport numpy as np\n\nimport time\n\nimport pyqtgraph as pg\n\n# from pint import UnitRegistry\n\nsys.path.append(\"/Users/oneminimax/Documents/Projets Programmation\")\n\nfrom AsciiDataFile.Readers import MDDataFileReader as Reader\nfrom AsciiDataFile.HotReader import HotReader\nfrom HotDataFollowerQt import DataFileFollower, DataPathFollower\nimport UnitModule as UM\n\ndefaultPath = r'/Users/oneminimax/Documents/Projets Physique/Gravure Faisceau Ions Refroidi/Tvstime'\n\nclass DataHandle(object):\n\n    def __init__(self,HDV,dataReader):\n\n        self.HDV = HDV\n        self.dataReader = dataReader\n\n        self.fieldNameList = self._getFieldNameList()\n        self.fieldUnitList = self._getFieldUnitList()\n        \n        self.follower = DataFileFollower(dataReader)\n        self.follower.newDataSignal.connect(self.newData)\n        self.following = False\n\n        self.pen = pg.mkPen()\n        \n        self.maxValues = np.zeros((len(self.fieldNameList),))\n        self.dataPlot = []\n        self.dataItem = []\n\n        self.description = self.follower.getDescription()\n        self.visible = True\n\n    def __del__(self):\n        \n        if self.dataPlot:\n            del(self.dataPlot)\n        if self.dataItem:\n            del(self.dataItem)\n\n    def _getFieldNameList(self):\n\n        return self.dataReader.data_container.get_field_names()\n\n    def _getFieldUnitList(self):\n\n        unitLabelList = self.dataReader.data_container.get_field_units()\n        fieldUnitList = list()\n        for unitLabel in unitLabelList:\n            fieldUnitList.append(UM.makeUnit(unitLabel))\n\n        return fieldUnitList\n\n    def setDataPlot(self,dataPlot):\n\n        self.dataPlot = dataPlot\n\n    def setDataItem(self,dataItem):\n\n        self.dataItem = dataItem\n\n    def setColor(self,color):\n\n        self.pen.setColor(color)\n        self.dataPlot.setPen(self.pen)\n\n    def follow(self):\n\n        if not self.following:\n            self.follower.start()\n            self.following = True\n        else:\n            self.follower.unpause()\n\n    def pauseFollow(self):\n\n        self.follower.pause()\n\n    def stopFollow(self):\n\n        if self.following:\n            self.follower.stop()\n            self.following = False\n\n    def newData(self):\n\n        self.HDV.updatePlot(self)\n\n    def show(self):\n\n        if not self.visible:\n            self.HDV.axes.addItem(self.dataPlot)\n            self.visible = True\n\n    def hide(self):\n\n        if self.visible:\n            self.HDV.axes.removeItem(self.dataPlot)\n            self.visible = False\n\n    def getXY(self,XFieldName,YFieldName):\n\n        X = self.dataReader.data_container.get_field_by_name(XFieldName)\n        Y = self.dataReader.data_container.get_field_by_name(YFieldName)\n        \n        return X,Y\n\n    def remove(self):\n\n        self.HDV.removeDataHandle(self)\n\nclass HotDataViewer(QMainWindow):\n\n    colorList = [\n        'red',\n        'blue',\n        'green',\n        'orange',\n        'pink',\n        'plum']\n\n    def __init__(self,app):\n        super().__init__()\n\n        self.app = app\n\n        self.dataHandleList = list()\n        self.numberOfData = 0\n\n        self.AxisFieldNameList = list()\n        self.AxisFieldUnitList = list()\n        self.XAxisFieldName = None\n        self.YAxisFieldName = None\n\n        self.Xdatalim = [0,1]\n        self.Ydatalim = [0,1]\n\n        self.Xscale = 1\n        self.Yscale = 1\n\n        self.folderFollowerList = list()\n\n        self._initUI()\n\n    def __del__(self):\n\n        print('close')\n\n    def _initUI(self):\n\n        self.setGeometry(300, 300, 700, 500)\n        self.setWindowTitle('Hot Data Viewer')\n        self.setStyleSheet(\"background-color: black;\")\n\n        self._makeWidgets()\n        self._makeLayout()\n        self._makeConnect()\n\n    def _makeWidgets(self):\n\n        self.cw = QWidget(self)\n        self.setCentralWidget(self.cw)\n        \n        self.buttonOpenFile = QPushButton(\"Open File\",self.cw)\n        self.buttonFollowFile = QPushButton(\"Follow File\",self.cw)\n        self.buttonFollowFolder = QPushButton(\"Follow Folder\",self.cw)\n\n        self.buttonSelectData = QPushButton(\"Select Data\")\n        self.buttonSelectAxis = QPushButton(\"Select Axis\")\n\n        self.buttonOpenFile.setStyleSheet(\"background-color: gray;\")\n        self.buttonFollowFile.setStyleSheet(\"background-color: gray;\")\n        self.buttonFollowFolder.setStyleSheet(\"background-color: gray;\")\n        self.buttonSelectData.setStyleSheet(\"background-color: gray;\")\n        self.buttonSelectAxis.setStyleSheet(\"background-color: gray;\")\n\n        self.axes = pg.PlotWidget()\n\n        self.axisConfigWindow = SelectAxis(self)\n        self.dataConfigWindow = SelectData(self)\n\n    def _makeLayout(self):\n\n        hbox = QHBoxLayout()\n        hbox.addWidget(self.buttonOpenFile)\n        hbox.addWidget(self.buttonFollowFile)\n        hbox.addWidget(self.buttonFollowFolder)\n        hbox.addStretch(1)\n        hbox.addWidget(self.buttonSelectData)\n        hbox.addWidget(self.buttonSelectAxis)\n\n        vbox = QVBoxLayout(self.cw)\n        vbox.addWidget(self.axes)\n        vbox.addLayout(hbox)\n\n    def _makeConnect(self):\n\n        self.buttonOpenFile.clicked.connect(self.onButtonOpenFile)\n        self.buttonFollowFile.clicked.connect(self.onButtonFollowFile)\n        self.buttonFollowFolder.clicked.connect(self.onButtonFollowFolder)\n        self.buttonSelectData.clicked.connect(self.onButtonSelectData)\n        self.buttonSelectAxis.clicked.connect(self.onButtonSelectAxis)\n\n    def onButtonOpenFile(self):\n\n        filePath = QFileDialog.getOpenFileName(self, 'Open File',defaultPath)[0]\n\n        if filePath:\n            self.newDataHandle(filePath)\n\n    def onButtonFollowFile(self):\n\n        filePath = QFileDialog.getOpenFileName(self, 'Open File',defaultPath)[0]\n\n        if filePath:\n            self.newDataHandle(filePath,follow = True)\n\n    def onButtonFollowFolder(self):\n\n        dataPath = QFileDialog.getExistingDirectory(self, 'Select a directory',defaultPath)\n\n        if dataPath:\n            newFolderFollower = DataPathFollower(dataPath)\n            newFolderFollower.newFileSignal.connect(lambda: self.detectNewFile(newFolderFollower,follow = True))\n            newFolderFollower.start()\n            self.folderFollowerList.append(newFolderFollower)\n\n    def onButtonSelectData(self):\n\n        self.dataConfigWindow.show()\n        self.dataConfigWindow.raise_()\n        self.dataConfigWindow.activateWindow()\n\n    def onButtonSelectAxis(self):\n\n        self.axisConfigWindow.show()\n        self.axisConfigWindow.raise_()\n        self.axisConfigWindow.activateWindow()\n\n    def detectNewFile(self,folderFollower,follow = False):\n\n        self.newDataHandle(folderFollower.getLastNewFilePath(),follow)\n                \n    def newDataHandle(self,filePath,follow = False):\n\n        reader = Reader()\n        dataReader = HotReader(reader,filePath)\n\n        newDataHandle = DataHandle(self,dataReader)\n        if self.addDataHandle(newDataHandle):\n            if follow:\n                newDataHandle.follow()\n            self.dataConfigWindow.addDataHandle(newDataHandle)\n\n    def addDataHandle(self,newDataHandle):\n\n        if len(self.dataHandleList) == 0:\n            self.AxisFieldNameList = newDataHandle.fieldNameList\n            self.AxisFieldUnitList = newDataHandle.fieldUnitList\n\n            for unit in self.AxisFieldUnitList:\n                print(unit)\n\n            self.XAxisFieldName = self.AxisFieldNameList[0]\n            self.YAxisFieldName = self.AxisFieldNameList[1]\n            self.updateXAxisChoice()\n            self.updateYAxisChoice()\n            self.changeXAxisChoice()\n            self.changeYAxisChoice()\n            self.updateXAxesLabel()\n            self.updateYAxesLabel()\n\n            addIt = True\n        else:\n            duplicate = False\n            for dataHandle in self.dataHandleList:\n                if dataHandle.dataReader.file_path == newDataHandle.dataReader.file_path:\n                    duplicate = True\n                    break\n            \n            if duplicate:\n                addIt = False\n                print('File already opened')\n            # If the datafile contains the same field name\n            elif set(self.AxisFieldNameList) == set(newDataHandle.fieldNameList):\n                addIt = True\n            else:\n                addIt = False\n\n        if addIt:\n            self.dataHandleList.append(newDataHandle)\n            self.newPlot(newDataHandle)\n            \n            self.numberOfData += 1\n\n        return addIt\n\n    def removeDataHandle(self,dataHandle):\n\n        self.axes.removeItem(dataHandle.dataPlot)\n        self.dataConfigWindow.removeDataHandle(dataHandle)\n        self.dataHandleList.remove(dataHandle)\n        del(dataHandle)\n\n    def newPlot(self,dataHandle):\n\n        dataHandle.pen = pg.mkPen(self.numberOfData,width = 2)\n        X,Y = dataHandle.getXY(self.XAxisFieldName,self.YAxisFieldName)\n        dataPlot = self.axes.plot(X, Y, pen = dataHandle.pen)\n        # self.axes.removeItem(dataPlot) #Need to remove it so it can be added when the visible checkbox is automatically checked at creation\n        dataHandle.setDataPlot(dataPlot)\n\n    def updateAllPlot(self):\n\n        for dataHandle in self.dataHandleList:\n            self.updatePlot(dataHandle)\n\n    def updatePlot(self,dataHandle):\n\n        X,Y = dataHandle.getXY(self.XAxisFieldName,self.YAxisFieldName)\n\n        dataHandle.dataPlot.setData(X/self.Xscale,Y/self.Yscale)\n\n    def getXYDataLimit(self):\n\n        minXList = list()\n        maxXList = list()\n        minYList = list()\n        maxYList = list()\n\n        for dataHandle in self.dataHandleList:\n            X,Y = dataHandle.getXY(self.XAxisFieldName,self.YAxisFieldName)\n            minXList.append(X.min())\n            maxXList.append(X.max())\n            minYList.append(Y.min())\n            maxYList.append(Y.max())\n\n        Xdatalim = [np.array(minXList).min(),np.array(maxXList).max()]\n        Ydatalim = [np.array(minYList).min(),np.array(maxYList).max()]\n\n        return Xdatalim, Ydatalim\n\n    def updateXAxesLabel(self):\n\n        indexX = self.AxisFieldNameList.index(self.XAxisFieldName)\n        XAxisUnit = self.AxisFieldUnitList[indexX]\n        \n        xLabel = '{0:s} ({1:s})'.format(self.XAxisFieldName,XAxisUnit.getScaledLabel(self.Xscale))\n        self.axes.setLabel('bottom', text = xLabel)\n        \n    def updateYAxesLabel(self):\n\n        indexY = self.AxisFieldNameList.index(self.YAxisFieldName)\n        YAxisUnit = self.AxisFieldUnitList[indexY]\n\n        yLabel = '{0:s} ({1:s})'.format(self.YAxisFieldName,YAxisUnit.getScaledLabel(self.Yscale))\n        self.axes.setLabel('left', text = yLabel)\n\n    def updateXAxisChoice(self):\n\n        indexX = self.AxisFieldNameList.index(self.XAxisFieldName)\n\n        self.axisConfigWindow.XaxisComboBox.clear()\n        self.axisConfigWindow.XaxisComboBox.addItems(self.AxisFieldNameList)\n        self.axisConfigWindow.XaxisComboBox.setCurrentIndex(indexX)\n\n    def updateYAxisChoice(self):\n\n        indexY = self.AxisFieldNameList.index(self.YAxisFieldName)\n\n        self.axisConfigWindow.YaxisComboBox.clear()\n        self.axisConfigWindow.YaxisComboBox.addItems(self.AxisFieldNameList)\n        self.axisConfigWindow.YaxisComboBox.setCurrentIndex(indexY)\n\n    def changeXAxisChoice(self):\n\n        indexX = self.axisConfigWindow.XaxisComboBox.currentIndex()\n        \n        self.XAxisFieldName = self.AxisFieldNameList[indexX]\n        XAxisUnit = self.AxisFieldUnitList[indexX]\n        \n        self.axisConfigWindow.XunitComboBox.clear()\n        self.axisConfigWindow.XunitComboBox.addItems(XAxisUnit.getAllScaleLabelList())\n\n        self.Xscale = 1\n        \n        XUnitIndex = self.axisConfigWindow.XunitComboBox.findText(XAxisUnit.getScaledLabel(self.Xscale))\n        if XUnitIndex > -1:\n            self.axisConfigWindow.XunitComboBox.setCurrentIndex(XUnitIndex)\n\n        self.updateXAxesLabel()\n        self.updateAllPlot()\n\n    def changeYAxisChoice(self):\n\n        indexY = self.axisConfigWindow.YaxisComboBox.currentIndex()\n        \n        self.YAxisFieldName = self.AxisFieldNameList[indexY]\n        YAxisUnit = self.AxisFieldUnitList[indexY]\n\n        self.axisConfigWindow.YunitComboBox.clear()\n        self.axisConfigWindow.YunitComboBox.addItems(YAxisUnit.getAllScaleLabelList())\n\n        self.Yscale = 1\n\n        YUnitIndex = self.axisConfigWindow.YunitComboBox.findText(YAxisUnit.getScaledLabel(self.Yscale))\n        if YUnitIndex > -1:\n            self.axisConfigWindow.YunitComboBox.setCurrentIndex(YUnitIndex)\n\n        self.updateYAxesLabel()\n        self.updateAllPlot()\n\n    def updateXScale(self):\n\n        indexX = self.axisConfigWindow.XaxisComboBox.currentIndex()\n        \n        XAxisUnit = self.AxisFieldUnitList[indexX]\n        indexUnitX = self.axisConfigWindow.XunitComboBox.currentIndex()\n        if indexUnitX > -1:\n            currentXUnitLabel = XAxisUnit.getAllScaleLabelList()[indexUnitX]\n            self.Xscale = XAxisUnit.relativeScale(currentXUnitLabel)\n            \n        self.updateXAxesLabel()\n        self.updateAllPlot()\n            \n    def updateYScale(self):\n\n        indexY = self.axisConfigWindow.YaxisComboBox.currentIndex()\n\n        YAxisUnit = self.AxisFieldUnitList[indexY]\n        indexUnitY = self.axisConfigWindow.YunitComboBox.currentIndex()\n        if indexUnitY > -1:\n            currentYUnitLabel = YAxisUnit.getAllScaleLabelList()[indexUnitY]\n            self.Yscale = YAxisUnit.relativeScale(currentYUnitLabel)\n            \n        self.updateYAxesLabel()\n        self.updateAllPlot()\n\n            \n\nclass SelectAxis(QWidget):\n    def __init__(self,HDV):\n        QWidget.__init__(self)\n        \n        self.HDV = HDV\n        self._initUI()\n\n        self.setWindowFlags(Qt.CustomizeWindowHint | Qt.WindowCloseButtonHint)\n\n    def _initUI(self):\n\n        self.setGeometry(350, 350, 300, 150)\n        self.setWindowTitle('Select Axis')\n        self.setStyleSheet(\"background-color: gray;\")\n\n        self._makeWidgets()\n        self._makeLayout()\n        self._makeConnect()\n\n    def closeEvent(self,event):\n\n        print('closing select axis')\n\n    def _makeWidgets(self):\n\n        self.XaxisLabel = QLabel('X axis')\n        self.YaxisLabel = QLabel('Y axis')\n\n        self.XaxisComboBox = QComboBox()\n        self.YaxisComboBox = QComboBox()\n\n        self.XunitComboBox = QComboBox()\n        self.YunitComboBox = QComboBox()\n\n    def _makeLayout(self):\n\n        grid = QGridLayout()\n        grid.addWidget(self.XaxisLabel,1,1)\n        grid.addWidget(self.YaxisLabel,2,1)\n        grid.addWidget(self.XaxisComboBox,1,2)\n        grid.addWidget(self.YaxisComboBox,2,2)\n        grid.addWidget(self.XunitComboBox,1,3)\n        grid.addWidget(self.YunitComboBox,2,3)\n\n        vbox = QVBoxLayout(self)\n        vbox.addLayout(grid)\n        vbox.addStretch(1)\n\n    def _makeConnect(self):\n        \n        self.XaxisComboBox.currentIndexChanged.connect(self.HDV.changeXAxisChoice)\n        self.YaxisComboBox.currentIndexChanged.connect(self.HDV.changeYAxisChoice)\n\n        self.XunitComboBox.currentIndexChanged.connect(self.HDV.updateXScale)\n        self.YunitComboBox.currentIndexChanged.connect(self.HDV.updateYScale)\n\nclass SelectData(QWidget):\n    def __init__(self,HDV):\n        QWidget.__init__(self)\n        \n        self.HDV = HDV\n        self.dataListItemList = list()\n\n        self._initUI()\n\n        self.setWindowFlags(Qt.CustomizeWindowHint | Qt.WindowCloseButtonHint)\n\n    def _initUI(self):\n\n        self.setGeometry(350, 350, 400, 300)\n        self.setWindowTitle('Select Data')\n        # self.setStyleSheet(\"background-color: gray;\")\n\n        self._makeWidgets()\n        self._makeLayout()\n        self._makeConnect()\n\n    def closeEvent(self,event):\n\n        print('closing select data')\n\n    def _makeWidgets(self):\n\n        pass\n\n    def _makeLayout(self):\n\n        self.layout = QVBoxLayout(self)\n        self.layout.setContentsMargins(0,0,0,0)\n        self.layout.addStretch()\n\n    def _makeConnect(self):\n        \n        pass\n        # self.dataTree.itemChanged.connect(self.onChangeHandler)\n\n    def addFolder(self,folder):\n\n        pass\n\n    def addDataHandle(self,dataHandle):\n\n        self.dataListItemList.append(DataListItem(dataHandle,parent=self))\n        dataHandle.setDataItem(self.dataListItemList[-1])\n        self.layout.insertWidget(self.layout.count()-1,self.dataListItemList[-1])\n\n    def removeDataHandle(self,dataHandle):\n\n        self.layout.removeWidget(dataHandle.dataItem)\n        self.dataListItemList.remove(dataHandle.dataItem)\n        dataHandle.dataItem.deleteLater()\n\nclass DataListItem(QWidget):\n\n    def __init__(self,dataHandle, parent = None):\n\n        super(DataListItem, self).__init__(parent)\n\n        self.dataHandle = dataHandle\n\n        self._makeWidgets()\n        self._makeLayout()\n        self._makeConnect()\n\n    def _makeWidgets(self):\n        \n        self.descriptionEdit = QLineEdit(self.dataHandle.description,parent = self)\n\n        self.visibleCheckBox = QCheckBox('Visible',parent = self)\n        if self.dataHandle.visible:\n            self.visibleCheckBox.setCheckState(2)\n\n        self.followCheckBox = QCheckBox('Follow',parent = self)\n        if self.dataHandle.following:\n            self.followCheckBox.setCheckState(2)\n\n        self.buttonColorPick = QPushButton(\"\",parent = self)\n        self.buttonColorPick.setMaximumWidth(32)\n        self.setButtonColor(self.dataHandle.pen.color())\n\n        self.buttonRemove = QPushButton(\"Remove\",parent = self)\n\n    def _makeLayout(self):\n\n        self.layout = QHBoxLayout(self)\n        self.layout.setContentsMargins(0,0,0,0)\n\n        self.layout.addWidget(self.descriptionEdit)\n        self.layout.addWidget(self.visibleCheckBox)\n        self.layout.addWidget(self.followCheckBox)\n        self.layout.addWidget(self.buttonColorPick)\n        self.layout.addWidget(self.buttonRemove)\n        \n    def _makeConnect(self):\n\n        self.visibleCheckBox.stateChanged.connect(self.onChangeVisible)\n        self.followCheckBox.stateChanged.connect(self.onChangeFollow)\n        self.descriptionEdit.editingFinished.connect(self.onChangeDescription)\n        self.buttonColorPick.clicked.connect(self.onColorPick)\n        self.buttonRemove.clicked.connect(self.onRemoveHandle)\n\n    def setButtonColor(self,color):\n\n        self.buttonColorPick.setStyleSheet(\"background-color: {0:s};\".format(color.name()))\n\n    def onChangeVisible(self):\n\n        if self.visibleCheckBox.isChecked():\n            self.dataHandle.show()\n        else:\n            self.dataHandle.hide()\n\n    def onChangeFollow(self):\n\n        if self.followCheckBox.isChecked():\n            self.dataHandle.follow()\n        else:\n            self.dataHandle.pauseFollow()\n\n    def onChangeDescription(self):\n\n        self.dataHandle.description = self.descriptionEdit.text()\n\n    def onColorPick(self):\n\n        dlg = QColorDialog(self)\n        # if self._color:\n            # dlg.setCurrentColor(QColor(self._color))\n\n        if dlg.exec_():\n            newColor = dlg.currentColor()\n            self.setButtonColor(newColor)\n            self.dataHandle.setColor(newColor)\n\n\n            # self.setColor(dlg.currentColor().name())\n\n    def onRemoveHandle(self):\n\n        self.dataHandle.remove()\n\n\n\ndef main():\n    app = QApplication(sys.argv)\n    HDV = HotDataViewer(app)\n    HDV.show()\n    sys.exit(app.exec_())\n\n\n\n\n\n\nif __name__ == '__main__':\n    main()\n\n",
-			"file": "/Users/oneminimax/Documents/Projets Programmation/HotData/HotDataViewerQt.py",
-			"file_size": 19631,
-			"file_write_time": 131952574180625571,
+			"file": "/Users/maximedion/Documents/Projets Programmation/HotData/HotDataViewerQt.py",
 			"settings":
 			{
-				"buffer_size": 19631,
+				"buffer_size": 20500,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/maximedion/Documents/Projets Programmation/HotData/Data/data_column_file0.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/maximedion/Documents/Projets Programmation/HotData/.gitignore",
+			"settings":
+			{
+				"buffer_size": 39,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -675,11 +690,15 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/oneminimax/Documents/Projets Programmation/HotData",
-		"/Users/oneminimax/Documents/Projets Programmation/HotData/Data"
+		"/Users/maximedion/Documents/Projets Programmation/HotData",
+		"/Users/maximedion/Documents/Projets Programmation/HotData/Data",
+		"/Users/maximedion/Documents/Projets Programmation/HotData/Project"
 	],
 	"file_history":
 	[
+		"/Users/maximedion/Documents/Projets Programmation/HotData/DataGenerator.py",
+		"/Users/maximedion/Documents/Projets Programmation/HotData/UnitModule.py",
+		"/Users/maximedion/Documents/Projets Programmation/HotData/HotDataFollowerQt.py",
 		"/Users/oneminimax/Documents/Projets Programmation/HotData/HotDataViewerQt.py",
 		"/Users/oneminimax/Documents/Projets Programmation/HotData/HotDataFollowerQt.py",
 		"/Users/oneminimax/Documents/Projets Programmation/AsciiDataFile/HotReader.py",
@@ -777,7 +796,7 @@
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
@@ -791,134 +810,134 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"dataReader",
-			"data_container",
-			"getFieldByName",
-			"data_container",
-			"getFieldUnitList",
-			"getFieldNameList",
-			"dataContainer",
-			"dataReader",
-			"Reader",
-			"dataReader",
-			"HotReader",
+			"setColor",
+			"setDataItem",
+			"setDataPlot",
+			"update_x_label",
+			"update_x_axis_choice",
+			"new_data_handle",
+			"change_x_axis_choice",
+			"x_scale",
+			"axis_column_units",
+			"column_units",
+			"_get_column_units",
+			"UM",
+			"newData",
+			"dataFile",
+			"data_container.",
+			"unitLabel",
+			"unitLabelList",
 			"reader",
 			"Reader",
-			"DataHandle",
-			"newDataHandle",
-			"updateAllPlot",
-			"processEvents",
-			"self",
-			"updateAllPlot",
-			"updateXAxesLabel",
-			"updateXScale",
-			"newDataHandle",
-			"newPlot",
-			"newDataHandle",
-			"DataHandle",
-			"HotReader",
-			".getFieldByName",
-			"updatePlot",
-			"newData",
+			"MDDataFileReader",
 			"Reader",
-			"setDataPlot",
-			"dataPlot",
-			"setData",
-			"dataPlot",
-			"updatePlot",
-			"getFieldByName",
-			"dataReader",
-			"DataHandle",
-			"addDataHandle",
-			"newDataHandle",
-			"dataReader",
-			"Reader",
-			"updateAllPlot",
-			"X",
-			"updateXAxisChoice",
-			"YunitComboBox",
-			"_makeConnect",
-			"updateYScale",
-			"updateXAxisChoice",
-			"X",
-			"updateAxisChoice",
-			"updateAxesLabel",
-			"updateScale",
-			"updateAxesLabel",
-			"updateAxisChoice",
-			"ydatalim",
-			"xdatalim",
-			"axis",
-			"XaxisComboBox",
-			"axis",
-			"yplotlim",
-			"xplotlim",
-			"getXYDataLimit",
-			"YAxisFieldName",
-			"YAutoLim",
-			"getXYDataLimit",
-			"updatePlotLim",
-			"getXYDataLimit",
-			"xplotlim",
-			"updateAxesLabel",
-			"updatePlotLim",
-			"updatePlot",
-			"unit",
-			"Name",
-			"self",
-			", ",
-			"\"",
 			"print",
-			"SelectData",
-			"dataConfigWindow",
-			"removeDataHandle",
-			"remove",
-			"removeDataHandle",
-			"setDataItem",
-			"setListItem",
-			"removeDataHandle",
-			"OpenFile",
-			"following",
-			"dataHandle",
-			"QCheckBox",
-			"newDataHandle",
-			"detectNewFile",
-			"visible",
-			"descriptionLabel",
-			"subLayout",
-			"pauseFollow",
-			"stopFollow",
-			"updateVisible",
-			"dataHandle",
-			".tree",
-			"axis",
-			"onButtonSelectData",
-			"onButtonSelectAxis",
+			"_baseLabel",
+			"_baseScale",
+			"_floorScale",
+			"makeUnit",
+			"expressIn",
+			"oldUnit",
+			"newUnit",
+			"newColor",
+			"dataListItemList",
+			"_makeConnect",
+			"_makeLayout",
+			"_makeWidgets",
+			"closeEvent",
+			"_initUI",
+			"update_x_label",
+			"updateXAxesLabel",
+			"y_axis_unit",
+			"currentYUnitLabel",
+			"relativeScale",
+			"y_axis_unit",
+			"getAllScaleLabelList",
+			"y_axis_unit",
+			"newLabel",
+			"supportedLabels",
+			"maxValue",
+			"rescaledUnit",
+			"newPrefix",
+			"newBaseScale",
+			"baseScale",
+			"labelList",
+			"baseValue",
+			"_getScale",
+			"_matchLabel",
+			"_generateMatchStr",
+			"_allScaleLabelList",
+			"allScaleLabelList",
+			"relativeScale",
+			"getAllScaleLabelList",
+			"getLabel",
+			"validLabel",
+			"onPause",
+			"keepRunning",
+			"moveToThread",
+			"nbNewLine",
+			"dataReader",
+			"allFile",
+			"wantedFiles",
+			"dataFileFollowerList",
+			"dataFileList",
+			"getScaledLabel",
+			"yLabel",
+			"xLabel",
+			"maxs_y",
+			"mins_y",
+			"maxs_x",
+			"mins_x",
+			"maxYList",
+			"minYList",
+			"maxXList",
+			"minYList",
+			"minXList",
+			"newPlot",
+			"dataPath",
+			"filePath",
 			"axisConfigWindow",
-			"onButtonSelectAxis",
-			"SelectAxis",
-			"os",
-			"dataFile",
-			"DataHandle",
-			"lastDataFileDir",
-			"Visa('GPIB::')",
-			"self.",
-			"NI",
-			"NV",
-			"set_temperature",
-			"Output",
-			"output",
-			"X",
-			"XAxisLabel",
-			"dataFieldNameList",
-			"_readHeader",
-			"headerLines",
-			"nameList",
-			"dataFieldNameList",
+			"buttonSelectAxis",
+			"buttonSelectData",
+			"buttonFollowFolder",
+			"buttonFollowFile",
+			"buttonOpenFile",
+			"folderFollowerList",
+			"newFolderFollower",
+			"newFileSignal",
+			"lastNewFile",
+			"dataPath",
+			"pathFollower",
+			"getDescription",
+			"YunitComboBox",
+			"XunitComboBox",
+			"y_axis_combo_box",
+			"YaxisComboBox",
+			"XaxisComboBox",
+			"YaxisLabel",
+			"XaxisLabel",
+			"indexUnitY",
+			"indexUnitX",
+			"XAxisUnit",
+			"Yscale",
+			"Xscale",
+			"XUnitIndex",
+			"YAxisUnit",
+			"update_y_scale",
+			"updateYScale",
+			"updateXScale",
+			"changeXAxisChoice",
+			"updateYAxisChoice",
+			"updateXAxisChoice",
+			"changeYAxisChoice",
+			"updateYAxesLabel",
+			"updateAllPlot",
 			"updatePlot",
-			"X",
-			"event.",
-			"event"
+			"description_edit",
+			"descriptionEdit",
+			"buttonRemove",
+			"buttonColorPick",
+			"followCheckBox"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -941,19 +960,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/oneminimax/Documents/Projets Programmation/HotData/HotDataViewerQt.py",
+					"file": "/Users/maximedion/Documents/Projets Programmation/HotData/HotDataViewerQt.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19631,
+						"buffer_size": 20500,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1683,
-								1683
+								1709,
+								1709
 							]
 						],
 						"settings":
@@ -962,11 +981,67 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 1.0,
-						"translation.y": 915.0,
+						"translation.x": 0.0,
+						"translation.y": 709.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/maximedion/Documents/Projets Programmation/HotData/Data/data_column_file0.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/maximedion/Documents/Projets Programmation/HotData/.gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 39,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								19
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
