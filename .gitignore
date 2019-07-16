@@ -1,4 +1,7 @@
 
 *.sublime-project
 *.sublime-workspace
+.DS_Store
 Legacy/
+Data/
+__pychache__/

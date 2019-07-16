@@ -2,6 +2,7 @@
 from PyQt5.QtWidgets import QWidget,QApplication, QMainWindow,QLabel,QLineEdit, QPushButton, QCheckBox, QComboBox, QLayout, QHBoxLayout, QVBoxLayout, QGridLayout, QFileDialog, QColorDialog
 from PyQt5.QtCore import QThreadPool, Qt
 import sys
+import os
 
 import numpy as np
 
@@ -14,18 +15,6 @@ import configparser
 from AsciiDataFile.Readers import MDDataFileReader, DataColumnReader
 from AsciiDataFile.HotReader import HotReader
 from HotDataFollowerQt import DataFileFollower, DataPathFollower
-import UnitModule as UM
-
-import configparser
-
-
-
-# default_data_path = r'/Users/maximedion/Documents/Projets Physique/2019/PCCO Hall/Data Files/20180705A/isotherms'
-# default_data_path = r'/Users/maximedion/Documents/Projets Programmation/HotData/Data')
-# read_mode = 'MDData'
-# read_mode = 'DataColumn'
-
-
 
 class DataHandle(object):
 
@@ -224,6 +213,7 @@ class HotDataViewer(QMainWindow):
 
         file_path = QFileDialog.getOpenFileName(self, 'Open File',self.config['Param']['default_data_path'])[0]
         if file_path:
+            self.set_default_path(file_path)
             self.new_data_handle(file_path)
 
     def on_button_follow_file(self):
@@ -231,6 +221,7 @@ class HotDataViewer(QMainWindow):
         file_path = QFileDialog.getOpenFileName(self, 'Open File',self.config['Param']['default_data_path'])[0]
 
         if file_path:
+            self.set_default_path(file_path)
             self.new_data_handle(file_path,follow = True)
 
     def on_button_follow_folder(self):
@@ -238,6 +229,7 @@ class HotDataViewer(QMainWindow):
         data_path = QFileDialog.getExistingDirectory(self, 'Select a directory',self.config['Param']['default_data_path'])
 
         if data_path:
+            self.set_default_path(data_path)
             new_folder_follower = DataPathFollower(data_path)
             new_folder_follower.new_file_signal.connect(lambda: self.detect_new_file(new_folder_follower,follow = True))
             new_folder_follower.start()
@@ -410,6 +402,20 @@ class HotDataViewer(QMainWindow):
 
         self.update_y_label()
         self.update_all_plot()
+
+    def set_default_path(self,last_path):
+        if os.path.isfile(last_path):
+            new_default_path, _ = os.path.split(last_path)
+        else:
+            new_default_path = last_path
+        
+        self.config['Param']['default_data_path'] = new_default_path
+        self.save_config()
+
+    def save_config(self):
+
+        with open('HotDataConfig.ini','w') as configfile:
+            self.config.write(configfile)
 
 class SelectAxis(QWidget):
     def __init__(self,HDV):
