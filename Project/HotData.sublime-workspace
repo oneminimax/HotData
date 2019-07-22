@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"scale",
+				"scale_value"
+			],
+			[
+				"axis_co",
+				"axis_column_units"
+			],
+			[
+				"data_",
+				"data_handles"
+			],
+			[
+				"data",
+				"data_reader"
+			],
+			[
+				"new",
+				"new_data_handle"
+			],
+			[
+				"sc",
+				"scale_value"
+			],
+			[
+				"get_c",
+				"get_column_by_name"
+			],
+			[
+				"col",
+				"column_names"
+			],
+			[
+				"co",
+				"column_name"
+			],
+			[
+				"file",
+				"file_name"
+			],
+			[
+				"fol",
+				"follower"
+			],
+			[
 				"sa",
 				"save_config"
 			],
@@ -18,10 +62,6 @@
 			[
 				"de",
 				"default_data_path"
-			],
-			[
-				"new",
-				"new_default_path"
 			],
 			[
 				"fi",
@@ -50,10 +90,6 @@
 			[
 				"Hot",
 				"HotReader"
-			],
-			[
-				"file",
-				"filePath"
 			],
 			[
 				"up",
@@ -136,10 +172,6 @@
 				"dataPath"
 			],
 			[
-				"data",
-				"dataHandle"
-			],
-			[
 				"remove",
 				"removeDataHandle"
 			],
@@ -182,10 +214,6 @@
 			[
 				"QL",
 				"QListWidgetItem"
-			],
-			[
-				"col",
-				"column"
 			],
 			[
 				"upda",
@@ -274,10 +302,6 @@
 			[
 				"ans",
 				"answerList"
-			],
-			[
-				"co",
-				"commandStr"
 			],
 			[
 				"list",
@@ -490,30 +514,6 @@
 			[
 				"setEn",
 				"setEndStep"
-			],
-			[
-				"colo",
-				"colorList"
-			],
-			[
-				"YDat",
-				"YDataList"
-			],
-			[
-				"XData",
-				"XDataList"
-			],
-			[
-				"plot",
-				"plotPage"
-			],
-			[
-				"na",
-				"nameList"
-			],
-			[
-				"empt",
-				"emptyLine"
 			]
 		]
 	},
@@ -524,6 +524,31 @@
 			"settings":
 			{
 				"buffer_size": 163,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/maximedion/Documents/Projets Programmation/HotData/HotDataFollowerQt.py",
+			"settings":
+			{
+				"buffer_size": 2559,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/maximedion/Documents/Projets Programmation/HotData/HotDataViewerQt.py",
+			"settings":
+			{
+				"buffer_size": 20041,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/maximedion/Documents/Projets Programmation/HotData/DataGenerator.py",
+			"settings":
+			{
+				"buffer_size": 705,
 				"line_ending": "Unix"
 			}
 		}
@@ -800,6 +825,38 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"update_scale_values",
+			"update_plot",
+			"update_all_plot",
+			"update_plot",
+			"update_all_plot",
+			"axis_column_units",
+			"axis_base_column_units",
+			"axis_column_units",
+			"column_units",
+			"update_plot",
+			"max_values",
+			"get_xy",
+			"new_plot",
+			"get_xy",
+			"x",
+			"x_axis_column_name",
+			"axis_column_names",
+			"x_axis_column_name",
+			"update_plot",
+			"lapse",
+			"getLastNewFilePath",
+			"folderFollower",
+			"detect_new_file",
+			"get_last_new_file",
+			"getLastNewFilePath",
+			"last_new_file",
+			"file",
+			"_listWantedFiles",
+			"Reader",
+			"newLine",
+			"fileFollower",
+			"new_data_handle",
 			"set_default_path",
 			"config",
 			"closeEvent",
@@ -895,39 +952,7 @@
 			"_generateMatchStr",
 			"_allScaleLabelList",
 			"allScaleLabelList",
-			"relativeScale",
-			"getAllScaleLabelList",
-			"getLabel",
-			"validLabel",
-			"onPause",
-			"keepRunning",
-			"moveToThread",
-			"nbNewLine",
-			"dataReader",
-			"allFile",
-			"wantedFiles",
-			"dataFileFollowerList",
-			"dataFileList",
-			"getScaledLabel",
-			"yLabel",
-			"xLabel",
-			"maxs_y",
-			"mins_y",
-			"maxs_x",
-			"mins_x",
-			"maxYList",
-			"minYList",
-			"maxXList",
-			"minYList",
-			"minXList",
-			"newPlot",
-			"dataPath",
-			"filePath",
-			"axisConfigWindow",
-			"buttonSelectAxis",
-			"buttonSelectData",
-			"buttonFollowFolder",
-			"buttonFollowFile"
+			"relativeScale"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -945,7 +970,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -963,6 +988,94 @@
 							[
 								163,
 								163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/maximedion/Documents/Projets Programmation/HotData/HotDataFollowerQt.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2559,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1995,
+								1995
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1316.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/maximedion/Documents/Projets Programmation/HotData/HotDataViewerQt.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2371,
+								2371
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1820.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/maximedion/Documents/Projets Programmation/HotData/DataGenerator.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 705,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								611,
+								611
 							]
 						],
 						"settings":

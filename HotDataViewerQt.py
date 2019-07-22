@@ -93,7 +93,6 @@ class DataHandle(object):
 
     def new_data(self):
 
-        print('new data')
         self.update_scale_values()
         self.HDV.rescale_units(self.HDV.x_axis_column_name)
         self.HDV.rescale_units(self.HDV.y_axis_column_name)
@@ -292,10 +291,12 @@ class HotDataViewer(QMainWindow):
             self.axis_column_names = new_data_handle.column_names
             self.axis_column_units = new_data_handle.column_units
 
+            print(self.axis_column_names,self.axis_column_units)
+
             self.x_axis_column_name = self.axis_column_names[0]
             self.y_axis_column_name = self.axis_column_names[1]
-            self.x_axis_column_units = self.axis_column_names[0]
-            self.y_axis_column_units = self.axis_column_names[1]
+            self.x_axis_column_units = self.axis_column_units[0]
+            self.y_axis_column_units = self.axis_column_units[1]
 
             self.update_x_axis_choice()
             self.update_y_axis_choice()
@@ -361,13 +362,18 @@ class HotDataViewer(QMainWindow):
 
         index = self.axis_column_names.index(column_name)
         if len(self.data_handles) > 0:
+            previous_column_units = self.axis_column_units[index]
             scale_values = np.zeros((len(self.data_handles)))*self.axis_column_units[index]
             for i, data_handle in enumerate(self.data_handles):
                 scale_values[i] = data_handle.scale_values[index]
             
             scale_value = np.max(scale_values)
-            self.axis_column_units[index] = scale_value.to_compact().units
-            # print(scale_value.to_compact())
+            new_column_units = scale_value.to_compact().units
+            
+            if not previous_column_units == new_column_units:
+                self.axis_column_units[index] = new_column_units
+                self.update_x_label()
+                self.update_y_label()
 
     def get_xy_data_limit(self):
 
