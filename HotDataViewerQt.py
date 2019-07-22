@@ -1,4 +1,3 @@
-
 from PyQt5.QtWidgets import QWidget,QApplication, QMainWindow,QLabel,QLineEdit, QPushButton, QCheckBox, QComboBox, QLayout, QHBoxLayout, QVBoxLayout, QGridLayout, QFileDialog, QColorDialog
 from PyQt5.QtCore import QThreadPool, Qt
 import sys
@@ -32,7 +31,7 @@ class DataHandle(object):
 
         self.pen = pg.mkPen()
         
-        self.max_values = np.zeros((len(self.column_names),))
+        self.scale_values = list()
         self.data_plot = []
         self.data_item = []
 
@@ -85,8 +84,19 @@ class DataHandle(object):
             self.follower.stop()
             self.following = False
 
+    def update_scale_values(self):
+
+        if self.data_reader.data_curve.data_length > 0:
+            self.scale_values = list()
+            for column_name in self.column_names:
+                self.scale_values.append(np.max(np.abs(self.get_column_by_name(column_name))))
+
     def new_data(self):
 
+        print('new data')
+        self.update_scale_values()
+        self.HDV.rescale_units(self.HDV.x_axis_column_name)
+        self.HDV.rescale_units(self.HDV.y_axis_column_name)
         self.HDV.update_plot(self)
 
     def show(self):
@@ -103,10 +113,14 @@ class DataHandle(object):
 
     def get_xy(self,x_column_name,y_column_name):
 
-        X = self.data_reader.get_column_by_name(x_column_name)
-        Y = self.data_reader.get_column_by_name(y_column_name)
+        X = self.get_column_by_name(x_column_name)
+        Y = self.get_column_by_name(y_column_name)
         
         return X,Y
+
+    def get_column_by_name(self,column_name):
+
+        return self.data_reader.get_column_by_name(column_name)
 
     def remove(self):
 
@@ -137,6 +151,8 @@ class HotDataViewer(QMainWindow):
         self.axis_column_units = list()
         self.x_axis_column_name = None
         self.y_axis_column_name = None
+        self.x_axis_units = None
+        self.y_axis_units = None
 
         self.x_data_lim = [0,1]
         self.y_data_lim = [0,1]
@@ -247,9 +263,11 @@ class HotDataViewer(QMainWindow):
         self.axis_config_window.raise_()
         self.axis_config_window.activateWindow()
 
-    def detect_new_file(self,folderFollower,follow = False):
+    def detect_new_file(self,folder_follower,follow = False):
 
-        self.new_data_handle(folderFollower.getLastNewFilePath(),follow)
+        folder_follower.pause()
+        self.new_data_handle(folder_follower.get_last_new_file(),follow)
+        folder_follower.unpause()
                 
     def new_data_handle(self,file_path,follow = False):
 
@@ -261,7 +279,9 @@ class HotDataViewer(QMainWindow):
         data_reader = HotReader(reader,file_path)
 
         new_data_handle = DataHandle(self,data_reader)
+
         if self.add_data_handle(new_data_handle):
+            new_data_handle.update_scale_values()
             if follow:
                 new_data_handle.follow()
             self.data_config_window.add_data_handle(new_data_handle)
@@ -274,6 +294,9 @@ class HotDataViewer(QMainWindow):
 
             self.x_axis_column_name = self.axis_column_names[0]
             self.y_axis_column_name = self.axis_column_names[1]
+            self.x_axis_column_units = self.axis_column_names[0]
+            self.y_axis_column_units = self.axis_column_names[1]
+
             self.update_x_axis_choice()
             self.update_y_axis_choice()
             self.change_x_axis_choice()
@@ -329,8 +352,22 @@ class HotDataViewer(QMainWindow):
     def update_plot(self,data_handle):
 
         X,Y = data_handle.get_xy(self.x_axis_column_name,self.y_axis_column_name)
+        index_x = self.axis_column_names.index(self.x_axis_column_name)
+        index_y = self.axis_column_names.index(self.y_axis_column_name)
 
-        data_handle.data_plot.setData(X.magnitude,Y.magnitude)
+        data_handle.data_plot.setData(X.to(self.axis_column_units[index_x]).magnitude,Y.to(self.axis_column_units[index_y]).magnitude)
+
+    def rescale_units(self,column_name):
+
+        index = self.axis_column_names.index(column_name)
+        if len(self.data_handles) > 0:
+            scale_values = np.zeros((len(self.data_handles)))*self.axis_column_units[index]
+            for i, data_handle in enumerate(self.data_handles):
+                scale_values[i] = data_handle.scale_values[index]
+            
+            scale_value = np.max(scale_values)
+            self.axis_column_units[index] = scale_value.to_compact().units
+            # print(scale_value.to_compact())
 
     def get_xy_data_limit(self):
 
@@ -388,7 +425,9 @@ class HotDataViewer(QMainWindow):
         index_x = self.axis_config_window.x_axis_combo_box.currentIndex()
         
         self.x_axis_column_name = self.axis_column_names[index_x]
-        x_axis_unit = self.axis_column_units[index_x]
+        self.x_axis_column_units = self.axis_column_units[index_x]
+
+        self.rescale_units(self.x_axis_column_name)
 
         self.update_x_label()
         self.update_all_plot()
@@ -398,7 +437,9 @@ class HotDataViewer(QMainWindow):
         index_y = self.axis_config_window.y_axis_combo_box.currentIndex()
         
         self.y_axis_column_name = self.axis_column_names[index_y]
-        y_axis_unit = self.axis_column_units[index_y]
+        self.y_axis_column_units = self.axis_column_units[index_y]
+
+        self.rescale_units(self.y_axis_column_name)
 
         self.update_y_label()
         self.update_all_plot()

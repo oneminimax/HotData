@@ -4,8 +4,36 @@
 		"selected_items":
 		[
 			[
+				"sa",
+				"save_config"
+			],
+			[
+				"confi",
+				"configfile"
+			],
+			[
+				"HotData",
+				"HotDataConfig"
+			],
+			[
+				"de",
+				"default_data_path"
+			],
+			[
+				"new",
+				"new_default_path"
+			],
+			[
+				"fi",
+				"file_path"
+			],
+			[
+				"MD",
+				"MDDataFileReader"
+			],
+			[
 				"Data",
-				"DataColumnReader"
+				"DataColumn"
 			],
 			[
 				"ra",
@@ -92,10 +120,6 @@
 				"unitLabelList"
 			],
 			[
-				"new",
-				"newUnit"
-			],
-			[
 				"re",
 				"relativeScale"
 			],
@@ -138,10 +162,6 @@
 			[
 				"Dat",
 				"DataListItem"
-			],
-			[
-				"de",
-				"descriptionLabel"
 			],
 			[
 				"vis",
@@ -494,54 +514,16 @@
 			[
 				"empt",
 				"emptyLine"
-			],
-			[
-				"open",
-				"openingMode"
-			],
-			[
-				"dataFile",
-				"dataFileManager"
-			],
-			[
-				"ope",
-				"openingMode"
-			],
-			[
-				"op",
-				"openingMode"
-			],
-			[
-				"wr",
-				"writeDataFilePath"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/Users/maximedion/Documents/Projets Programmation/HotData/HotDataViewerQt.py",
+			"file": "/Users/maximedion/Documents/Projets Programmation/HotData/testPint.py",
 			"settings":
 			{
-				"buffer_size": 20500,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/maximedion/Documents/Projets Programmation/HotData/Data/data_column_file0.txt",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/maximedion/Documents/Projets Programmation/HotData/.gitignore",
-			"settings":
-			{
-				"buffer_size": 39,
-				"encoding": "UTF-8",
+				"buffer_size": 163,
 				"line_ending": "Unix"
 			}
 		}
@@ -691,11 +673,19 @@
 	"expanded_folders":
 	[
 		"/Users/maximedion/Documents/Projets Programmation/HotData",
-		"/Users/maximedion/Documents/Projets Programmation/HotData/Data",
 		"/Users/maximedion/Documents/Projets Programmation/HotData/Project"
 	],
 	"file_history":
 	[
+		"/Users/maximedion/Documents/Projets Programmation/HotData/WX_Interface.py",
+		"/Users/maximedion/Documents/Projets Programmation/HotData/HotDataViewerQt.py",
+		"/Users/maximedion/Documents/Projets Programmation/HotData/.gitignore",
+		"/Users/maximedion/Documents/Projets Programmation/HotData/HotDataConfig.ini",
+		"/Users/maximedion/Documents/Projets Programmation/HotData/testConfigParser.py",
+		"/Users/maximedion/Documents/Projets Programmation/HotData/Legacy/UnitModule.py",
+		"/Users/maximedion/Documents/Projets Programmation/HotData/Data/data_column_file0.txt",
+		"/Users/maximedion/Documents/Projets Programmation/AsciiDataFile/HotReader.py",
+		"/Users/maximedion/Documents/Projets Programmation/AsciiDataFile/DataContainer.py",
 		"/Users/maximedion/Documents/Projets Programmation/HotData/DataGenerator.py",
 		"/Users/maximedion/Documents/Projets Programmation/HotData/UnitModule.py",
 		"/Users/maximedion/Documents/Projets Programmation/HotData/HotDataFollowerQt.py",
@@ -810,6 +800,43 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"set_default_path",
+			"config",
+			"closeEvent",
+			"data_config_window",
+			"config",
+			"default_data_path",
+			"config",
+			"default_data_path",
+			"print",
+			"x_unit_combo_box",
+			"axis_column_units",
+			"column_units",
+			"get_xy_data_limit",
+			"y_data_lim",
+			"print",
+			"get_xy",
+			"plot",
+			"get_xy",
+			"YFieldName",
+			"XFieldName",
+			"get_xy",
+			"get_xy_data_limit",
+			"getXYDataLimit",
+			"update_x_label",
+			"DataHandle",
+			"_get_column_names",
+			"DataHandle",
+			"_get_column_names",
+			"column_names",
+			"new_data_handle",
+			"axis_column_names",
+			"new_data_handle",
+			"onButtonSelectAxis",
+			"onButtonSelectData",
+			"onButtonFollowFolder",
+			"onButtonFollowFile",
+			"onButtonOpenFile",
 			"setColor",
 			"setDataItem",
 			"setDataPlot",
@@ -900,44 +927,7 @@
 			"buttonSelectAxis",
 			"buttonSelectData",
 			"buttonFollowFolder",
-			"buttonFollowFile",
-			"buttonOpenFile",
-			"folderFollowerList",
-			"newFolderFollower",
-			"newFileSignal",
-			"lastNewFile",
-			"dataPath",
-			"pathFollower",
-			"getDescription",
-			"YunitComboBox",
-			"XunitComboBox",
-			"y_axis_combo_box",
-			"YaxisComboBox",
-			"XaxisComboBox",
-			"YaxisLabel",
-			"XaxisLabel",
-			"indexUnitY",
-			"indexUnitX",
-			"XAxisUnit",
-			"Yscale",
-			"Xscale",
-			"XUnitIndex",
-			"YAxisUnit",
-			"update_y_scale",
-			"updateYScale",
-			"updateXScale",
-			"changeXAxisChoice",
-			"updateYAxisChoice",
-			"updateXAxisChoice",
-			"changeYAxisChoice",
-			"updateYAxesLabel",
-			"updateAllPlot",
-			"updatePlot",
-			"description_edit",
-			"descriptionEdit",
-			"buttonRemove",
-			"buttonColorPick",
-			"followCheckBox"
+			"buttonFollowFile"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -960,88 +950,30 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/maximedion/Documents/Projets Programmation/HotData/HotDataViewerQt.py",
+					"file": "/Users/maximedion/Documents/Projets Programmation/HotData/testPint.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 20500,
+						"buffer_size": 163,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1709,
-								1709
+								163,
+								163
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 709.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/maximedion/Documents/Projets Programmation/HotData/Data/data_column_file0.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/maximedion/Documents/Projets Programmation/HotData/.gitignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 39,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								19,
-								19
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1053,7 +985,7 @@
 	},
 	"input":
 	{
-		"height": 38.0
+		"height": 43.0
 	},
 	"layout":
 	{
