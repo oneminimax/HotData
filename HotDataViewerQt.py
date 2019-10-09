@@ -291,8 +291,6 @@ class HotDataViewer(QMainWindow):
             self.axis_column_names = new_data_handle.column_names
             self.axis_column_units = new_data_handle.column_units
 
-            print(self.axis_column_names,self.axis_column_units)
-
             self.x_axis_column_name = self.axis_column_names[0]
             self.y_axis_column_name = self.axis_column_names[1]
             self.x_axis_column_units = self.axis_column_units[0]
